@@ -4,9 +4,22 @@ Antistresová apka: změkčuje ostré příchozí zprávy a koučuje před odesl
 
 ```
 core/            pill-core (Go) — /classify /soften /coach, pill-eval
-data/eval/       eval set (JSONL) + formát
-docs/            scénář rozhovoru s páry (fáze 0)
+app/             Flutter apka + klávesnice-kouč (Android IME, iOS Keyboard Extension)
+data/eval/       eval set (JSONL) + formát; data/dev/ syntetický set na ladění
+docs/            scénář rozhovoru s páry (fáze 0), zadání pro MacBook (fáze 1b)
 ```
+
+## app — klávesnice-kouč (fáze 1b)
+
+Flutter = onboarding, nastavení serveru, „Vyzkoušej kouče“. Klávesnice jsou nativní:
+`app/android/.../PillKeyboardService.kt` a `app/ios/PillKeyboard/`. Po pauze v psaní pošlou
+rozepsanou zprávu na `/coach` a při útoku ukážou lištu se dvěma alternativami; text nahradí
+jen po tapnutí, nikdy nic neodešlou. Citlivá pole (heslo, čísla, e-mail) se neposílají.
+
+```sh
+cd app && flutter analyze && flutter test
+```
+Buildy a ruční test: [`docs/macbook-1b-klavesnice.md`](docs/macbook-1b-klavesnice.md).
 
 ## pill-core
 

@@ -1,0 +1,63 @@
+# Zadání pro MacBook session — fáze 1b: klávesnice-kouč
+
+Na M2 se nebuildí (málo paměti). Kód je hotový a zkontrolovaný (`flutter analyze`, `flutter test`, Swift typecheck klávesnice proti iOS SDK). Kotlin ani Xcode projekt zatím nikdo nepřeložil — to je úkol téhle session.
+
+Repo: `lioilsources/ThePill`, složka `app/`. Nic z toho nepushuj bez potvrzení uživatele.
+
+## 0. Příprava
+```sh
+git pull
+cd app && flutter pub get && flutter analyze && flutter test
+```
+
+## 1. Android (nejdřív — nepotřebuje ruční zásahy)
+```sh
+cd app/android && ./gradlew :app:testDebugUnitTest   # CoachGateTest
+cd .. && flutter build apk --debug
+```
+- Oprav případné chyby překladu v `android/app/src/main/kotlin/com/lioilsources/the_pill/` (PillKeyboardService, CoachClient, CoachGate, SharedConfig, MainActivity). Kotlin zatím nikdo nepřekládal.
+- Nainstaluj na telefon, Nastavení → Systém → Klávesnice → zapni „The Pill“.
+
+## 2. iOS — přidat target klávesnice v Xcode
+Soubory už leží v `app/ios/PillKeyboard/` a `app/ios/Shared/`; target ale v `Runner.xcodeproj` chybí.
+
+1. `open app/ios/Runner.xcworkspace`
+2. File → New → Target → **Custom Keyboard Extension**. Název `PillKeyboard`, bundle id `com.lioilsources.thePill.PillKeyboard`, jazyk Swift. „Activate scheme?“ → Activate.
+3. Smaž soubory, které Xcode vygeneroval (`KeyboardViewController.swift`, `Info.plist`), a do targetu přidej existující:
+   - `PillKeyboard/KeyboardViewController.swift`, `CoachGate.swift`, `CoachClient.swift`
+   - `PillKeyboard/cs.lproj/Localizable.strings`, `en.lproj/Localizable.strings` (jako lokalizace cs + en)
+   - `Shared/SharedConfig.swift` → zaškrtni target **Runner i PillKeyboard**
+4. Build Settings targetu PillKeyboard: `INFOPLIST_FILE = PillKeyboard/Info.plist`, `CODE_SIGN_ENTITLEMENTS = PillKeyboard/PillKeyboard.entitlements`, iOS Deployment Target 15.0, stejný Team jako Runner.
+5. Target Runner: `CODE_SIGN_ENTITLEMENTS = Runner/Runner.entitlements`.
+6. Signing & Capabilities u obou targetů: **App Groups** → `group.com.lioilsources.thePill` (v Developer portálu ji případně vytvoř).
+7. Build Phases targetu Runner: fáze **Embed Foundation Extensions** musí být **nad** „Thin Binary“ / „Run Script“, jinak Xcode hlásí „Cycle inside Runner“ (známý problém Flutteru s extensions).
+8. `flutter build ios --debug --no-codesign` pro kontrolu, pak spustit na zařízení.
+9. Na iPhonu: Nastavení → Obecné → Klávesnice → Přidat → The Pill → zapnout **Povolit plný přístup**.
+
+## 3. pill-core pro test na telefonu
+`pill-core` zatím běží jen lokálně. Na M2 (nebo MacBooku) v kořeni repa:
+```sh
+cp .env.example .env   # doplň adresu Sparku v LAN (viz ~/.claude/shared/infra.md)
+PILL_ADDR=0.0.0.0:8090 make run
+```
+- Model na Sparku musí běžet: `id=$(sparkctl lease thepill qwen36 60 10 "ThePill test klávesnice")`, během testu `sparkctl hb $id` aspoň každých 5 min, na konci `sparkctl done $id`.
+- V apce vyplň adresu `http://<IP Macu v LAN>:8090` → Uložit. Pole „Vyzkoušej kouče“ ověří spojení.
+- Debug Android povoluje HTTP (`src/debug/res/xml/network_security_config.xml`), iOS klávesnice má `NSAllowsLocalNetworking`. **[ověřit]**, zda ATS pustí holou IP adresu; pokud ne, použij `<hostname>.local`.
+
+## 4. Ruční test (obě platformy)
+| # | Kroky | Očekávám |
+|---|---|---|
+| 1 | V Messengeru/WhatsAppu napiš „KDE SAKRA JSOU KLÍČE OD AUTA“, počkej 2 s | lišta „Tohle zní jako útok — zobrazit jinak?“ |
+| 2 | Zobrazit → tapni alternativu | celý text nahrazen alternativou, nic neodesláno |
+| 3 | Napiš „Koupíš cestou mlíko? Díky“ | žádná lišta |
+| 4 | Lišta je vidět, napiš další písmeno | lišta zmizí; nová kontrola po pauze |
+| 5 | Pole pro heslo / číslo / e-mail | kouč mlčí (iOS do hesla klávesnici nepustí vůbec) |
+| 6 | Zastav pill-core, napiš ostrou zprávu | žádná lišta, psaní funguje normálně (fail-open) |
+| 7 | iOS bez plného přístupu | klávesnice píše, kouč mlčí |
+| 8 | Kouč vypnutý v apce | žádná volání na server |
+| 9 | Diakritika, čísla, shift, ⌫, 🌐, ↵ | píše správně; ↵ v Messengeru odešle jen tvým tapnutím |
+
+## 5. Co nahlásit zpět
+- Co bylo potřeba opravit v Kotlinu/Swiftu (commit na větev `macbook-1b`, PR do `main`).
+- Výsledek tabulky výše, latence od pauzy po lištu, paměť klávesnice na iOS (limit extension).
+- Screenshoty lišty a alternativ z obou platforem.
