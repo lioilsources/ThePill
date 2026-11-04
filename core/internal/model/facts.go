@@ -11,9 +11,25 @@ import (
 
 var numRe = regexp.MustCompile(`\d+(?:[:.,/]\d+)*`)
 
-// HardFacts vrátí číselné fragmenty originálu (časy, data, částky, čísla).
+// Kmeny časových slov (po Normalize). „včera" schválně ne — bývá součástí výčitky, ne termínu. „dnes" pokryje i „dneska", „zitr" i „zítřek".
+var timeStems = []string{"dnes", "zitr", "pozitr", "rano", "vecer", "odpoledn", "dopoledn"}
+
+var wordRe = regexp.MustCompile(`[\p{L}]+`)
+
+// HardFacts vrátí fragmenty originálu, které přepis musí obsahovat vždy:
+// čísla (časy, data, částky) a časová slova (dnes, zítra, ráno…).
 func HardFacts(text string) []string {
-	return numRe.FindAllString(text, -1)
+	facts := numRe.FindAllString(text, -1)
+	seen := map[string]bool{}
+	for _, w := range wordRe.FindAllString(Normalize(text), -1) {
+		for _, st := range timeStems {
+			if strings.HasPrefix(w, st) && !seen[st] {
+				seen[st] = true
+				facts = append(facts, st)
+			}
+		}
+	}
+	return facts
 }
 
 // Normalize: malá písmena, bez diakritiky, sjednocené mezery.
@@ -42,4 +58,52 @@ func MissingFacts(text string, facts []string) []string {
 		}
 	}
 	return missing
+}
+
+// MissingFactsFuzzy: jako MissingFacts, ale slovo faktu stačí najít podle kmene
+// (bez posledních 1–2 písmen), aby skloňování a hovorové tvary („společnej" ×
+// „společný", „mámu" × „mámě") nebyly ztrátou. Pro fakta, která deklaroval model.
+func MissingFactsFuzzy(text string, facts []string) []string {
+	words := wordRe.FindAllString(Normalize(text), -1)
+	nums := Normalize(text)
+	var missing []string
+	for _, f := range facts {
+		ok := true
+		for _, w := range wordRe.FindAllString(Normalize(f), -1) {
+			if !hasStem(words, stem(w)) {
+				ok = false
+				break
+			}
+		}
+		for _, n := range numRe.FindAllString(f, -1) {
+			if !strings.Contains(nums, n) {
+				ok = false
+			}
+		}
+		if !ok {
+			missing = append(missing, f)
+		}
+	}
+	return missing
+}
+
+func stem(w string) string {
+	r := []rune(w)
+	switch {
+	case len(r) <= 3:
+		return w
+	case len(r) == 4:
+		return string(r[:3])
+	default:
+		return string(r[:len(r)-2])
+	}
+}
+
+func hasStem(words []string, st string) bool {
+	for _, w := range words {
+		if strings.HasPrefix(w, st) {
+			return true
+		}
+	}
+	return false
 }

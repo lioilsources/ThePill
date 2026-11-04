@@ -19,6 +19,7 @@ import (
 
 func main() {
 	set := flag.String("set", "../data/eval/eval.jsonl", "eval set (JSONL)")
+	verbose := flag.Bool("v", false, "vypsat surové neplatné odpovědi modelu (jen nad syntetickými daty!)")
 	flag.Parse()
 
 	items, err := eval.Load(*set)
@@ -33,7 +34,16 @@ func main() {
 	}
 	var rep eval.Report
 	if len(items) > 0 {
-		rep = eval.Run(context.Background(), config.FromEnv().Model(), items)
+		m := config.FromEnv().Model()
+		if *verbose {
+			m.Debug = func(op, raw string) {
+				if len(raw) > 600 {
+					raw = raw[:600] + "…"
+				}
+				fmt.Fprintf(os.Stderr, "[neplatný výstup %s] %s\n", op, raw)
+			}
+		}
+		rep = eval.Run(context.Background(), m, items)
 	}
 	rep.Print(os.Stdout)
 	if f := rep.Failures(); len(f) > 0 {

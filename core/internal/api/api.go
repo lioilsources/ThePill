@@ -12,7 +12,7 @@ import (
 	"encoding/json"
 	"errors"
 	"expvar"
-	"log"
+	"log/slog"
 	"net/http"
 	"strings"
 	"time"
@@ -127,7 +127,7 @@ func FactsPreserved(original string, out model.Softened) bool {
 	if len(model.MissingFacts(out.TextSoft, model.HardFacts(original))) > 0 {
 		return false
 	}
-	return len(model.MissingFacts(out.TextSoft, out.KeptFacts)) == 0
+	return len(model.MissingFactsFuzzy(out.TextSoft, out.KeptFacts)) == 0
 }
 
 func (s *Server) coach(w http.ResponseWriter, r *http.Request) {
@@ -183,7 +183,7 @@ func degraded(endpoint string, err error) {
 	}
 	mDegraded.Add(endpoint+"."+kind, 1)
 	// Chyba neobsahuje text zprávy (viz model.LLM) — smí do logu.
-	log.Printf("degraded endpoint=%s kind=%s err=%v", endpoint, kind, err)
+	slog.Warn("degraded", "endpoint", endpoint, "kind", kind, "err", err)
 }
 
 func writeJSON(w http.ResponseWriter, v any) {
@@ -204,6 +204,6 @@ func logRequests(next http.Handler) http.Handler {
 		start := time.Now()
 		sw := &statusWriter{ResponseWriter: w, status: http.StatusOK}
 		next.ServeHTTP(sw, r)
-		log.Printf("%s %s %d %s", r.Method, r.URL.Path, sw.status, time.Since(start).Round(time.Millisecond))
+		slog.Info("request", "method", r.Method, "path", r.URL.Path, "status", sw.status, "dur", time.Since(start).Round(time.Millisecond))
 	})
 }

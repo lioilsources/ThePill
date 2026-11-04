@@ -64,6 +64,9 @@ func Parse(r io.Reader) ([]Item, error) {
 			return nil, fmt.Errorf("řádek %d: ostrá zpráva bez text_soft", line)
 		}
 		// Chyba v anotaci: referenční přepis sám neobsahuje fakt, který vyžadujeme.
+		if miss := model.MissingFacts(it.Text, it.Facts); len(miss) > 0 {
+			return nil, fmt.Errorf("řádek %d: fakta %v nejsou ani v originálu", line, miss)
+		}
 		if it.TextSoft != "" {
 			facts := append(append([]string{}, it.Facts...), model.HardFacts(it.Text)...)
 			if miss := model.MissingFacts(it.TextSoft, facts); len(miss) > 0 {
@@ -95,7 +98,22 @@ type Report struct {
 	// coach
 	CoachCaught, CoachNeutralFlagged int
 
-	Degraded int // volání, kde model selhal (počítá se jako fail-open)
+	Degraded     int            // volání, kde model selhal (počítá se jako fail-open)
+	DegradedKind map[string]int // "classify: model: neplatný výstup" → počet
+	Misses       []string       // "id: gold→pred (score)" u špatně zařazených
+	FallbackIDs  []string
+}
+
+func (r *Report) fail(endpoint string, err error) {
+	r.Degraded++
+	if r.DegradedKind == nil {
+		r.DegradedKind = map[string]int{}
+	}
+	msg := err.Error()
+	if len(msg) > 80 {
+		msg = msg[:80]
+	}
+	r.DegradedKind[endpoint+": "+msg]++
 }
 
 func (r Report) HostileRecall() float64 { return ratio(r.SharpCaught, r.Sharp) }
@@ -141,13 +159,16 @@ func Run(ctx context.Context, m model.Model, items []Item) Report {
 
 		c, err := m.Classify(ctx, model.ClassifyInput{Text: it.Text, Lang: "cs"})
 		if err != nil {
-			r.Degraded++
+			r.fail("classify", err)
 			c.Tone = model.ToneOK // fail-open jako server
 		}
 		if r.Confusion[it.Tone] == nil {
 			r.Confusion[it.Tone] = map[model.Tone]int{}
 		}
 		r.Confusion[it.Tone][c.Tone]++
+		if it.Tone.Sharp() != c.Tone.Sharp() {
+			r.Misses = append(r.Misses, fmt.Sprintf("%s: %s→%s (%.2f)", it.ID, it.Tone, c.Tone, c.Score))
+		}
 		if sharp && c.Tone.Sharp() {
 			r.SharpCaught++
 		}
@@ -157,7 +178,7 @@ func Run(ctx context.Context, m model.Model, items []Item) Report {
 
 		co, err := m.Coach(ctx, it.Text, "cs")
 		if err != nil {
-			r.Degraded++
+			r.fail("coach", err)
 		}
 		if sharp && co.IsHostile {
 			r.CoachCaught++
@@ -174,9 +195,10 @@ func Run(ctx context.Context, m model.Model, items []Item) Report {
 		s, err := m.Soften(ctx, it.Text, "cs")
 		final := s
 		if err != nil {
-			r.Degraded++
+			r.fail("soften", err)
 			final = model.Softened{TextSoft: it.Text}
 			r.Fallbacks++
+			r.FallbackIDs = append(r.FallbackIDs, it.ID+"(chyba)")
 		} else {
 			if len(model.MissingFacts(s.TextSoft, facts)) > 0 {
 				r.RawLostFacts++
@@ -184,6 +206,7 @@ func Run(ctx context.Context, m model.Model, items []Item) Report {
 			if !api.FactsPreserved(it.Text, s) {
 				final = model.Softened{TextSoft: it.Text}
 				r.Fallbacks++
+				r.FallbackIDs = append(r.FallbackIDs, fmt.Sprintf("%s%v", it.ID, append(model.MissingFacts(s.TextSoft, model.HardFacts(it.Text)), model.MissingFactsFuzzy(s.TextSoft, s.KeptFacts)...)))
 			}
 		}
 		for _, f := range model.MissingFacts(final.TextSoft, facts) {
@@ -207,6 +230,15 @@ func (r Report) Print(w io.Writer) {
 	fmt.Fprintf(w, "coach     recall %5.1f %%, FP %5.1f %%\n", 100*r.CoachRecall(), 100*r.CoachFP())
 	if r.Degraded > 0 {
 		fmt.Fprintf(w, "POZOR: %d volání modelu selhalo (fail-open)\n", r.Degraded)
+		for k, n := range r.DegradedKind {
+			fmt.Fprintf(w, "  %3d× %s\n", n, k)
+		}
+	}
+	if len(r.Misses) > 0 {
+		fmt.Fprintln(w, "špatně zařazené:", strings.Join(r.Misses, ", "))
+	}
+	if len(r.FallbackIDs) > 0 {
+		fmt.Fprintln(w, "fallback (chybějící fakta):", strings.Join(r.FallbackIDs, ", "))
 	}
 	tones := []model.Tone{model.ToneOK, model.ToneTense, model.ToneHostile, model.ToneManipulative}
 	fmt.Fprintf(w, "\nconfusion (řádek = zlatý tón, sloupec = predikce)\n%-13s", "")

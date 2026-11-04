@@ -1,0 +1,42 @@
+// Syntetický vývojový set — vymyšlené zprávy, žádná reálná data. Slouží k ladění promptů,
+// NE k měření cílů (na to je data/eval/eval.jsonl ze sběru ve fázi 0).
+{"id":"d01","text":"KDE SAKRA JSOU KLÍČE OD AUTA","tone":"hostile","text_soft":"Ptá se, kde jsou klíče od auta.","facts":["klíč","aut"]}
+{"id":"d02","text":"Ty seš fakt k ničemu. Vyzvedni Matyho ve školce v 16:30, nebo si mě nepřej.","tone":"manipulative","text_soft":"Prosí, abys vyzvedl Matyho ve školce v 16:30.","facts":["maty","škol"]}
+{"id":"d03","text":"Zase jsi utratil 2400 za blbosti?! Do pátku to vrátíš na společnej účet.","tone":"hostile","text_soft":"Chce, abys do pátku vrátil 2400 na společný účet.","facts":["pát","účet"]}
+{"id":"d04","text":"Jestli dneska zase přijdeš po osmé, tak tu spát nemusíš. Večeře je v 19:00.","tone":"manipulative","text_soft":"Prosí, abys dnes přišel včas, večeře je v 19:00.","facts":["večeř","dnes"]}
+{"id":"d05","text":"Na tebe se fakt nedá spolehnout. Kdo teda zítra vezme Elišku k doktorovi na 8:15?","tone":"hostile","text_soft":"Ptá se, kdo zítra vezme Elišku k doktorovi na 8:15.","facts":["zítra","elišk","doktor"]}
+{"id":"d06","text":"Sorry jako, ale ty plínky jsem chtěla VČERA. Velikost 4, Lidl, ať to nemusím zase řešit sama.","tone":"hostile","text_soft":"Prosí o plínky velikosti 4 z Lidlu, potřebovala je už včera.","facts":["plín","lidl","včera"]}
+{"id":"d07","text":"Super, takže v sobotu zase tvoje máma. Ani se nezeptáš. Přijede v 10?","tone":"hostile","text_soft":"Ptá se, jestli tvoje máma přijede v sobotu v 10, a chtěla by se příště předem domluvit.","facts":["sobot","mám"]}
+{"id":"d08","text":"Kdybys mě miloval, tak bys tu koupelnu dodělal ještě tento víkend.","tone":"manipulative","text_soft":"Prosí, abys koupelnu dodělal tento víkend.","facts":["koupeln","víkend"]}
+{"id":"d09","text":"Proč mi sakra nebereš telefon?? Malej má 38,5, jedu s ním na pohotovost do Motola.","tone":"hostile","text_soft":"Malý má horečku 38,5, jede s ním na pohotovost do Motola, nebereš jí telefon.","facts":["pohotovost","motol","telefon"]}
+{"id":"d10","text":"Ty jsi fakt idiot, nechal jsi kočárek v autě a já stojím před poliklinikou.","tone":"hostile","text_soft":"Kočárek zůstal v autě a ona stojí před poliklinikou.","facts":["kočár","aut","poliklinik"]}
+{"id":"d11","text":"Hmm, tak to jsi zase zapomněl. Klasika. Schůzka u ředitelky byla ve 14:00.","tone":"hostile","text_soft":"Schůzka u ředitelky byla ve 14:00 a zapomněl jsi na ni.","facts":["ředitel","schůzk"]}
+{"id":"d12","text":"Fajn, tak si dělej co chceš, stejně ti na nás nezáleží. Zítra jedu k našim na 3 dny.","tone":"manipulative","text_soft":"Zítra jede k našim na 3 dny.","facts":["zítra","našim"]}
+{"id":"d13","text":"TO NEMYSLÍŠ VÁŽNĚ. Zaplať tu fakturu za školku, 3 900, splatnost 15.11.","tone":"hostile","text_soft":"Prosí, abys zaplatil fakturu za školku, 3 900, splatnost 15.11.","facts":["faktur","škol","splatnost"]}
+{"id":"d14","text":"Já se tady s nima celej den peru a ty si v klidu sedíš v kanclu. Kup aspoň chleba a mléko.","tone":"hostile","text_soft":"Je unavená z celého dne s dětmi, prosí o chleba a mléko.","facts":["chleb","mlék"]}
+{"id":"d15","text":"Jestli to auto zítra neodvezeš do servisu na 7:30, tak už mi nic neslibuj.","tone":"manipulative","text_soft":"Prosí, abys zítra odvezl auto do servisu na 7:30.","facts":["aut","servis","zítra"]}
+{"id":"d16","text":"Ty seš fakt jak malej. Řekni mámě, že v neděli obědvat nepřijdeme.","tone":"hostile","text_soft":"Prosí, abys mámě řekl, že v neděli na oběd nepřijdete.","facts":["mám","neděl","oběd"]}
+{"id":"d17","text":"Každej normální chlap by si všim, že nemáme pleny. Dojdi pro ně do DM, zavíraj v 20:00.","tone":"hostile","text_soft":"Došly pleny, prosí, abys pro ně zašel do DM, zavírají ve 20:00.","facts":["plen","dm"]}
+{"id":"d18","text":"No jasně, zase práce. Tak mi aspoň napiš, jestli stihneš besídku ve čtvrtek v 17:00.","tone":"hostile","text_soft":"Ptá se, jestli stihneš besídku ve čtvrtek v 17:00.","facts":["besídk","čtvrt"]}
+{"id":"d19","text":"Po tom, co jsi včera předvedl, si dneska děti vezmeš ty. Od 15 do 19.","tone":"manipulative","text_soft":"Prosí, abys dnes hlídal děti od 15 do 19.","facts":["dět","dnes"]}
+{"id":"d20","text":"Sakra, kde je ta kartička pojišťovny?! Jsem na recepci u zubaře.","tone":"hostile","text_soft":"Ptá se, kde je kartička pojišťovny, je na recepci u zubaře.","facts":["kartičk","pojišťovn","zubař"]}
+{"id":"d21","text":"Zase jsi nechal nádobí ve dřezu. Umyješ ho večer?","tone":"tense"}
+{"id":"d22","text":"Můžeš už konečně odpovědět? Potřebuju vědět, kdy přijedeš.","tone":"tense"}
+{"id":"d23","text":"Jsem fakt utahaná, malá nespala. Můžeš dneska uspávat ty?","tone":"tense"}
+{"id":"d24","text":"Hm. Ok. Tak teda v šest.","tone":"tense"}
+{"id":"d25","text":"Už potřetí ti píšu kvůli tý pojistce, prosím vyřiď to.","tone":"tense"}
+{"id":"d26","text":"Koupíš cestou mlíko? Díky","tone":"ok"}
+{"id":"d27","text":"Malá dneska poprvé řekla táta 😍","tone":"ok"}
+{"id":"d28","text":"Budu doma kolem 18:00, mám vzít pizzu?","tone":"ok"}
+{"id":"d29","text":"Díky za včerejšek, bylo to fajn","tone":"ok"}
+{"id":"d30","text":"Doktorka říkala, že je to jen nachlazení, nic vážnýho","tone":"ok"}
+{"id":"d31","text":"V sobotu má Ema narozeniny u kamarádky, od 14 do 17","tone":"ok"}
+{"id":"d32","text":"Zaplatila jsem tu školku, 3 900, máš to v aplikaci","tone":"ok"}
+{"id":"d33","text":"Nezapomeň, že zítra jdeme k zubaři v 8:30","tone":"ok"}
+{"id":"d34","text":"Spí, konečně. Dáme si film?","tone":"ok"}
+{"id":"d35","text":"Volala tvoje máma, ozvi se jí prosím","tone":"ok"}
+{"id":"d36","text":"Jsem v Lidlu, chceš ještě něco?","tone":"ok"}
+{"id":"d37","text":"KDE JSI?? Jsem v pohodě, jen jsem se lekla, že nejdeš 😅","tone":"ok"}
+{"id":"d38","text":"Ty jo, ten učitel je fakt idiot, chtěl po nich úkol na neděli 😂","tone":"ok"}
+{"id":"d39","text":"Mám tě ráda. Dneska to bylo těžký, ale zvládli jsme to","tone":"ok"}
+{"id":"d40","text":"Auto je ze servisu, stálo to 6 200, platil jsem kartou","tone":"ok"}

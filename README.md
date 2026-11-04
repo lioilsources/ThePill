@@ -19,7 +19,7 @@ make run      # :8090
 | proměnná | default |
 |---|---|
 | `PILL_ADDR` | `:8090` |
-| `PILL_LLM_BASE_URL` | `https://llm.ol1n.com/v1` (LiteLLM na Sparku) |
+| `PILL_LLM_BASE_URL` | `http://localhost:8080/v1` — adresu Sparku dej do `.env` (viz `.env.example`) |
 | `PILL_LLM_API_KEY` | — |
 | `PILL_LLM_MODEL` | `openclaw-default` (Qwen3.6-35B-A3B) |
 | `PILL_LLM_TIMEOUT` | `20s` |

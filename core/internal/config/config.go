@@ -19,7 +19,7 @@ type Config struct {
 func FromEnv() Config {
 	c := Config{
 		Addr:       env("PILL_ADDR", ":8090"),
-		LLMBaseURL: env("PILL_LLM_BASE_URL", "https://llm.ol1n.com/v1"),
+		LLMBaseURL: env("PILL_LLM_BASE_URL", "http://localhost:8080/v1"),
 		LLMAPIKey:  os.Getenv("PILL_LLM_API_KEY"),
 		LLMModel:   env("PILL_LLM_MODEL", "openclaw-default"),
 		Timeout:    20 * time.Second,
@@ -30,7 +30,7 @@ func FromEnv() Config {
 	return c
 }
 
-func (c Config) Model() model.Model {
+func (c Config) Model() *model.LLM {
 	return model.NewLLM(c.LLMBaseURL, c.LLMAPIKey, c.LLMModel, c.Timeout)
 }
 

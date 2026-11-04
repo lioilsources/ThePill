@@ -85,3 +85,13 @@ func TestLLMCoachNeedsTwoAlternatives(t *testing.T) {
 		t.Fatalf("got %v", err)
 	}
 }
+
+func TestMissingFactsFuzzy(t *testing.T) {
+	soft := "Chce, abys do pátku vrátil 2400 na společný účet a řekl mámě o obědě."
+	if m := MissingFactsFuzzy(soft, []string{"společnej účet", "mámu", "2400"}); len(m) != 0 {
+		t.Fatalf("tvary mají projít, chybí %v", m)
+	}
+	if m := MissingFactsFuzzy(soft, []string{"Aničku", "2500"}); len(m) != 2 {
+		t.Fatalf("chybějící jméno a jiná částka mají chybět, got %v", m)
+	}
+}
