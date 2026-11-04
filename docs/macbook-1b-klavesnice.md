@@ -1,6 +1,6 @@
 # Zadání pro MacBook session — fáze 1b: klávesnice-kouč
 
-Na M2 se nebuildí (málo paměti). Kód je hotový a zkontrolovaný (`flutter analyze`, `flutter test`, Swift typecheck klávesnice proti iOS SDK). Kotlin ani Xcode projekt zatím nikdo nepřeložil — to je úkol téhle session.
+Na M2 se nebuildí (málo paměti). Kód je hotový a zkontrolovaný (`flutter analyze`, `flutter test`, Swift typecheck klávesnice proti iOS SDK, lint Xcode projektu). Kotlin ani Xcode projekt zatím nikdo nepřeložil — to je úkol téhle session.
 
 Repo: `lioilsources/ThePill`, složka `app/`. Nic z toho nepushuj bez potvrzení uživatele.
 
@@ -18,21 +18,16 @@ cd .. && flutter build apk --debug
 - Oprav případné chyby překladu v `android/app/src/main/kotlin/com/lioilsources/the_pill/` (PillKeyboardService, CoachClient, CoachGate, SharedConfig, MainActivity). Kotlin zatím nikdo nepřekládal.
 - Nainstaluj na telefon, Nastavení → Systém → Klávesnice → zapni „The Pill“.
 
-## 2. iOS — přidat target klávesnice v Xcode
-Soubory už leží v `app/ios/PillKeyboard/` a `app/ios/Shared/`; target ale v `Runner.xcodeproj` chybí.
+## 2. iOS — target klávesnice
+Target `PillKeyboard` je už v `Runner.xcodeproj` (přidaný skriptem přes `xcodeproj`): zdrojáky,
+`Shared/SharedConfig.swift` v obou targetech, lokalizace cs/en, Info.plist, entitlements s App Group
+`group.com.lioilsources.thePill`, a fáze „Embed Foundation Extensions“ je před „Thin Binary“.
+Zbývá jen podpis:
 
-1. `open app/ios/Runner.xcworkspace`
-2. File → New → Target → **Custom Keyboard Extension**. Název `PillKeyboard`, bundle id `com.lioilsources.thePill.PillKeyboard`, jazyk Swift. „Activate scheme?“ → Activate.
-3. Smaž soubory, které Xcode vygeneroval (`KeyboardViewController.swift`, `Info.plist`), a do targetu přidej existující:
-   - `PillKeyboard/KeyboardViewController.swift`, `CoachGate.swift`, `CoachClient.swift`
-   - `PillKeyboard/cs.lproj/Localizable.strings`, `en.lproj/Localizable.strings` (jako lokalizace cs + en)
-   - `Shared/SharedConfig.swift` → zaškrtni target **Runner i PillKeyboard**
-4. Build Settings targetu PillKeyboard: `INFOPLIST_FILE = PillKeyboard/Info.plist`, `CODE_SIGN_ENTITLEMENTS = PillKeyboard/PillKeyboard.entitlements`, iOS Deployment Target 15.0, stejný Team jako Runner.
-5. Target Runner: `CODE_SIGN_ENTITLEMENTS = Runner/Runner.entitlements`.
-6. Signing & Capabilities u obou targetů: **App Groups** → `group.com.lioilsources.thePill` (v Developer portálu ji případně vytvoř).
-7. Build Phases targetu Runner: fáze **Embed Foundation Extensions** musí být **nad** „Thin Binary“ / „Run Script“, jinak Xcode hlásí „Cycle inside Runner“ (známý problém Flutteru s extensions).
-8. `flutter build ios --debug --no-codesign` pro kontrolu, pak spustit na zařízení.
-9. Na iPhonu: Nastavení → Obecné → Klávesnice → Přidat → The Pill → zapnout **Povolit plný přístup**.
+1. `open app/ios/Runner.xcworkspace` → u Runner i PillKeyboard zvol Team (Signing & Capabilities).
+2. App Group `group.com.lioilsources.thePill` případně vytvoř v Developer portálu (Xcode to nabídne).
+3. `flutter build ios --debug --no-codesign` pro kontrolu, pak spustit na zařízení.
+4. Na iPhonu: Nastavení → Obecné → Klávesnice → Přidat → The Pill → zapnout **Povolit plný přístup**.
 
 ## 3. pill-core pro test na telefonu
 `pill-core` zatím běží jen lokálně. Na M2 (nebo MacBooku) v kořeni repa:
