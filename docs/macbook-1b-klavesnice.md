@@ -1,6 +1,6 @@
 # Zadání pro MacBook session — fáze 1b: klávesnice-kouč
 
-Na M2 se nebuildí (málo paměti). Kód je hotový a zkontrolovaný (`flutter analyze`, `flutter test`, Swift typecheck klávesnice proti iOS SDK, lint Xcode projektu). Kotlin ani Xcode projekt zatím nikdo nepřeložil — to je úkol téhle session.
+Stav (6. 11. 2026, build na M2 se svolením uživatele): `flutter analyze` a `flutter test` čisté, Android `testDebugUnitTest` (3 testy) a `flutter build apk --debug` prošly, `flutter build ios --debug --no-codesign` prošel a `PillKeyboard.appex` je v apce. Na zařízení zatím nikdo nespouštěl — to je úkol téhle session: podpis, instalace, ruční test.
 
 Repo: `lioilsources/ThePill`, složka `app/`. Nic z toho nepushuj bez potvrzení uživatele.
 
