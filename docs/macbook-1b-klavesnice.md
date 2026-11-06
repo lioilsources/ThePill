@@ -21,11 +21,11 @@ cd .. && flutter build apk --debug
 ## 2. iOS — target klávesnice
 Target `PillKeyboard` je už v `Runner.xcodeproj` (přidaný skriptem přes `xcodeproj`): zdrojáky,
 `Shared/SharedConfig.swift` v obou targetech, lokalizace cs/en, Info.plist, entitlements s App Group
-`group.com.lioilsources.thePill`, a fáze „Embed Foundation Extensions“ je před „Thin Binary“.
+`group.com.ol1n.thePill`, a fáze „Embed Foundation Extensions“ je před „Thin Binary“.
 Zbývá jen podpis:
 
 1. `open app/ios/Runner.xcworkspace` → u Runner i PillKeyboard zvol Team (Signing & Capabilities).
-2. App Group `group.com.lioilsources.thePill` případně vytvoř v Developer portálu (Xcode to nabídne).
+2. App Group `group.com.ol1n.thePill` případně vytvoř v Developer portálu (Xcode to nabídne).
 3. `flutter build ios --debug --no-codesign` pro kontrolu, pak spustit na zařízení.
 4. Na iPhonu: Nastavení → Obecné → Klávesnice → Přidat → The Pill → zapnout **Povolit plný přístup**.
 

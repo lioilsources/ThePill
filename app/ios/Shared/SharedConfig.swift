@@ -3,7 +3,7 @@ import Foundation
 /// Nastavení sdílené mezi apkou (Runner) a klávesnicí (PillKeyboard) přes App Group.
 /// Stejné klíče jako lib/src/shared_config.dart. Soubor patří do OBOU targetů.
 enum SharedConfig {
-  static let appGroup = "group.com.lioilsources.thePill"
+  static let appGroup = "group.com.ol1n.thePill"
   static let keyServerURL = "server_url"
   static let keyCoachEnabled = "coach_enabled"
 
