@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zásady ochrany soukromí — The Pill</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0b0f0d;
+      color: #e8efe9;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 60px 24px;
+      line-height: 1.7;
+    }
+    h1 { font-size: 2rem; color: #7fd18b; margin-bottom: 8px; }
+    .updated { color: #7c8a80; font-size: 0.9rem; margin-bottom: 40px; }
+    h2 { font-size: 1.1rem; color: #7fd18b; margin: 32px 0 10px; }
+    p, li { color: #c9d4cc; margin-bottom: 12px; }
+    ul { padding-left: 20px; }
+    a { color: #7aa7ff; }
+    code { color: #ff8a8a; }
+    footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #1f2a23; }
+    footer a { color: #8a998f; text-decoration: none; }
+    footer a:hover { color: #7fd18b; }
+  </style>
+</head>
+<body>
+  <h1>Zásady ochrany soukromí</h1>
+  <p class="updated">Aktualizováno: 8. listopadu 2026</p>
+
+  <h2>O co jde</h2>
+  <p>
+    Zásady se týkají appky <em>The Pill</em> (<code>com.ol1n.thePill</code>) od
+    Oldřicha Vořechovského (ol1n). The Pill je klávesnice, která nad rozepsanou
+    zprávou nabídne klidnější formulaci. Appka nemá účet, reklamy, analytiku ani
+    sledování.
+  </p>
+
+  <h2>Co se odesílá</h2>
+  <p>
+    Když píšeš klávesnicí The Pill a zpráva má aspoň 12 znaků, klávesnice po
+    krátké pauze odešle rozepsaný text na server <code>pill-core</code>, jehož
+    adresa je nastavená v appce. Server text posoudí jazykovým modelem a vrátí
+    návrh. Text se nahradí, jen když na návrh klepneš.
+  </p>
+  <ul>
+    <li>Nic se neodesílá z polí pro hesla a jiných citlivých polí.</li>
+    <li>Nic se neodesílá, když je napovídání v appce vypnuté nebo adresa serveru
+      chybí.</li>
+    <li>Jazykový model běží na vlastním hardwaru provozovatele, ne u cizí
+      AI služby.</li>
+    <li>Server <code>pill-core</code> text zpráv neukládá ani nezapisuje do logů.
+      Zapisuje jen provozní údaje bez obsahu (čas, délka zpracování, chyby).</li>
+  </ul>
+
+  <h2>V zařízení</h2>
+  <p>
+    Adresa serveru a přepínač napovídání se ukládají jen v telefonu
+    (SharedPreferences / App Group). Smazáním appky zmizí.
+  </p>
+
+  <h2>Co nesbíráme</h2>
+  <p>Jméno, e-mail, telefon, polohu, identifikátory zařízení ani reklamní ID.</p>
+
+  <h2>Děti</h2>
+  <p>Appka není určená dětem a vědomě od nich nic nesbírá.</p>
+
+  <h2>Změny</h2>
+  <p>
+    Když se zásady změní, nová verze bude na této adrese s novým datem dřív, než
+    změna vyjde v appce.
+  </p>
+
+  <h2>Kontakt</h2>
+  <p><a href="mailto:business@olin.now">business@olin.now</a></p>
+
+  <h1 style="margin-top:64px">Privacy Policy</h1>
+  <p class="updated">Last updated: November 8, 2026</p>
+  <p>
+    <em>The Pill</em> (<code>com.ol1n.thePill</code>) by Oldřich Vořechovský
+    (ol1n) is a keyboard that suggests a calmer wording for the message you are
+    typing. It has no account, ads, analytics or tracking.
+  </p>
+  <ul>
+    <li><strong>Sent.</strong> When a message has at least 12 characters, the
+      keyboard sends the draft, after a short pause, to the <code>pill-core</code>
+      server configured in the app. The text is replaced only if you tap the
+      suggestion.</li>
+    <li><strong>Never sent</strong> from password or other sensitive fields, or
+      when suggestions are off or no server is set.</li>
+    <li><strong>Where.</strong> The language model runs on the operator's own
+      hardware, not a third-party AI service. <code>pill-core</code> does not
+      store or log message text, only content-free operational data.</li>
+    <li><strong>On device.</strong> The server address and the suggestions
+      toggle are stored only on your phone.</li>
+  </ul>
+  <p>Contact: <a href="mailto:business@olin.now">business@olin.now</a></p>
+
+  <footer>
+    <a href="index.html">← The Pill</a> &nbsp;·&nbsp;
+    <a href="support.html">Podpora</a>
+  </footer>
+</body>
+</html>
