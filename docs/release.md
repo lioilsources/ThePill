@@ -40,6 +40,15 @@ Postup a pasti: `Distribution/SKILL.md`. Pro ThePill navíc:
    ```
    A ruční opravy z `Distribution/CLAUDE.md` (Issuer ID, názvy ASC secretů).
 
+## Server pro release buildy
+Release build povoluje jen HTTPS (`network_security_config`), HTTP na `pill-core`
+v LAN umí jen debug. Testeři z Firebase / TestFlightu potřebují `pill-core` za HTTPS
+(Caddy). Než bude, testuj debug APK přes `adb install`.
+
+## Privacy / support
+GitHub Pages z `main /docs`: `https://lioilsources.github.io/ThePill/privacy.html`,
+`…/support.html` (do ASC a Google Play). Marketing URL `https://olin.now/thepill`.
+
 ## Po vydání
 - olin.now: `apps/thepill/meta.md` → doplnit `testflight:` / `artifacts:` a screenshoty,
   `make fetch build`, PR, po merge `make deploy` (skill `release-flutter`).
