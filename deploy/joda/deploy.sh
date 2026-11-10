@@ -11,6 +11,8 @@ repo=$(cd "$here/../.." && pwd)
 dest=deploy/ThePill/deploy/joda
 public=${PILL_HOST:-pill.ol1n.com}
 version=$(git -C "$repo" describe --tags --always --dirty 2>/dev/null || echo dev)
+# SPARK gateway address lives only in the repo's local .env (never committed).
+llm_url=${PILL_LLM_BASE_URL:-$(sed -n 's/^PILL_LLM_BASE_URL=//p' "$repo/.env" 2>/dev/null | tail -1)}
 
 echo "==> build pill-core $version (linux/amd64)"
 make -C "$repo/core" joda-bin >/dev/null
@@ -19,14 +21,16 @@ echo "==> sync to $host:$dest"
 ssh "$host" "mkdir -p $dest"
 rsync -a --delete --exclude .env --exclude data --exclude 'cloudflared/*.json' --exclude cloudflared/config.yml "$here/" "$host:$dest/"
 
-ssh "$host" PUBLIC="$public" VERSION="$version" bash -s -- "$dest" <<'REMOTE'
+ssh "$host" PUBLIC="$public" VERSION="$version" LLM_URL="$llm_url" bash -s -- "$dest" <<'REMOTE'
 set -euo pipefail
 cd "$1"
 if [ ! -f .env ]; then
   # First run: random token, generated here and never printed.
   sed -e "s/^PILL_HOST=.*/PILL_HOST=$PUBLIC/" \
-      -e "s/^PILL_TOKEN=.*/PILL_TOKEN=$(openssl rand -hex 24)/" .env.example > .env
-  echo "created .env (token stays on this host; add the LiteLLM key from Olin)"
+      -e "s/^PILL_TOKEN=.*/PILL_TOKEN=$(openssl rand -hex 24)/" \
+      -e "s|^PILL_LLM_BASE_URL=.*|PILL_LLM_BASE_URL=$LLM_URL|" .env.example > .env
+  echo "created .env (token stays on this host)"
+  [ -n "$LLM_URL" ] || echo "warning: PILL_LLM_BASE_URL empty, pill-core runs degraded" >&2
 fi
 chmod 600 .env
 
