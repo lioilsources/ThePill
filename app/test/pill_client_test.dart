@@ -66,4 +66,19 @@ void main() {
     );
     expect((await c.coach('x')).isHostile, isFalse);
   });
+
+  test('token jde v hlavičce Authorization, bez tokenu se neposílá', () async {
+    final seen = <String?>[];
+    final mock = MockClient((req) async {
+      seen.add(req.headers['Authorization']);
+      return jsonRes({'is_hostile': false, 'why': '', 'alternatives': []});
+    });
+    await PillClient(
+      'http://pill.test',
+      token: 's3cret',
+      client: mock,
+    ).coach('x');
+    await PillClient('http://pill.test', client: mock).coach('x');
+    expect(seen, ['Bearer s3cret', null]);
+  });
 }

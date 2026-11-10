@@ -8,13 +8,14 @@ data class Coaching(val isHostile: Boolean, val why: String, val alternatives: L
 
 /** POST /coach na pill-core. Fail-open: jakákoli chyba = null (kouč mlčí). Volat mimo hlavní vlákno. */
 object CoachClient {
-    fun coach(serverUrl: String, text: String, lang: String = "cs"): Coaching? = try {
+    fun coach(serverUrl: String, text: String, token: String = "", lang: String = "cs"): Coaching? = try {
         val conn = URL(serverUrl.trimEnd('/') + "/coach").openConnection() as HttpURLConnection
         conn.requestMethod = "POST"
         conn.connectTimeout = 4000
         conn.readTimeout = 8000
         conn.doOutput = true
         conn.setRequestProperty("Content-Type", "application/json; charset=utf-8")
+        if (token.isNotEmpty()) conn.setRequestProperty("Authorization", "Bearer $token")
         val body = JSONObject().put("text", text).put("lang", lang).toString()
         conn.outputStream.use { it.write(body.toByteArray(Charsets.UTF_8)) }
         if (conn.responseCode != 200) {

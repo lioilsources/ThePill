@@ -26,12 +26,14 @@ import UIKit
         result([
           SharedConfig.keyServerURL: SharedConfig.serverURL,
           SharedConfig.keyCoachEnabled: SharedConfig.coachEnabled,
+          SharedConfig.keyToken: SharedConfig.token,
         ])
       case "save":
         let args = call.arguments as? [String: Any] ?? [:]
         SharedConfig.save(
           serverURL: args[SharedConfig.keyServerURL] as? String ?? "",
-          coachEnabled: args[SharedConfig.keyCoachEnabled] as? Bool ?? true)
+          coachEnabled: args[SharedConfig.keyCoachEnabled] as? Bool ?? true,
+          token: args[SharedConfig.keyToken] as? String ?? "")
         result(nil)
       case "openKeyboardSettings":
         // Nastavení apky; s nainstalovanou klávesnicí obsahuje položku Klávesnice.

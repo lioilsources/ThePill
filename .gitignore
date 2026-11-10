@@ -3,3 +3,6 @@ bin/
 .DS_Store
 # reálné zprávy párů — nikdy do veřejného repa
 data/eval/*.jsonl
+# Cloudflare tunnel credentials (only the example is tracked)
+deploy/joda/cloudflared/*
+!deploy/joda/cloudflared/config.yml.example

@@ -8,12 +8,13 @@ struct Coaching {
 
 /// POST /coach na pill-core. Fail-open: jakákoli chyba = nil (kouč mlčí).
 enum CoachClient {
-  static func coach(serverURL: String, text: String, lang: String = "cs", completion: @escaping (Coaching?) -> Void) {
+  static func coach(serverURL: String, text: String, token: String = "", lang: String = "cs", completion: @escaping (Coaching?) -> Void) {
     let base = serverURL.hasSuffix("/") ? String(serverURL.dropLast()) : serverURL
     guard let url = URL(string: base + "/coach") else { return completion(nil) }
     var req = URLRequest(url: url, timeoutInterval: 8)
     req.httpMethod = "POST"
     req.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+    if !token.isEmpty { req.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization") }
     req.httpBody = try? JSONSerialization.data(withJSONObject: ["text": text, "lang": lang])
     URLSession.shared.dataTask(with: req) { data, resp, _ in
       guard (resp as? HTTPURLResponse)?.statusCode == 200, let data else { return completion(nil) }

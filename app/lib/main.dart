@@ -24,7 +24,7 @@ class PillApp extends StatelessWidget {
   final SharedConfigStore store;
 
   /// Pro testy: podstrčit klienta bez sítě.
-  final PillClient Function(String baseUrl)? clientFactory;
+  final PillClient Function(String baseUrl, String token)? clientFactory;
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +49,8 @@ class PillApp extends StatelessWidget {
       locale: locale,
       home: HomeScreen(
         store: store,
-        clientFactory: clientFactory ?? PillClient.new,
+        clientFactory:
+            clientFactory ?? (url, token) => PillClient(url, token: token),
       ),
     );
   }

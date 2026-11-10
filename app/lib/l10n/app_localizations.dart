@@ -164,6 +164,18 @@ abstract class AppLocalizations {
   /// **'Adresa pill-core'**
   String get serverUrlLabel;
 
+  /// No description provided for @tokenLabel.
+  ///
+  /// In cs, this message translates to:
+  /// **'Přístupový token'**
+  String get tokenLabel;
+
+  /// No description provided for @tokenHint.
+  ///
+  /// In cs, this message translates to:
+  /// **'jen pro veřejný server, jinak nech prázdné'**
+  String get tokenHint;
+
   /// No description provided for @serverUrlHint.
   ///
   /// In cs, this message translates to:

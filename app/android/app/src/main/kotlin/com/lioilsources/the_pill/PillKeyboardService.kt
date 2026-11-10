@@ -110,12 +110,13 @@ class PillKeyboardService : InputMethodService() {
         val prefs = SharedConfig.prefs(this)
         val url = prefs.getString(SharedConfig.KEY_SERVER_URL, "") ?: ""
         val enabled = prefs.getBoolean(SharedConfig.KEY_COACH_ENABLED, true)
+        val token = prefs.getString(SharedConfig.KEY_TOKEN, "") ?: ""
         val text = currentText()
         if (!gate.shouldCheck(text, enabled, url, sensitive)) return
         gate.markChecked(text)
         val gen = generation
         io.execute {
-            val c = CoachClient.coach(url, text.take(MAX_CHARS))
+            val c = CoachClient.coach(url, text.take(MAX_CHARS), token)
             main.post {
                 // Uživatel mezitím psal dál → odpověď je k jinému textu, zahodit.
                 if (gen == generation && c != null && c.isHostile) showCoach(c)

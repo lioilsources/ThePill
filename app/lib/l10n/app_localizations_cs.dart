@@ -47,6 +47,12 @@ class AppLocalizationsCs extends AppLocalizations {
   String get serverUrlLabel => 'Adresa pill-core';
 
   @override
+  String get tokenLabel => 'Přístupový token';
+
+  @override
+  String get tokenHint => 'jen pro veřejný server, jinak nech prázdné';
+
+  @override
   String get serverUrlHint => 'http://<IP počítače>:8090';
 
   @override

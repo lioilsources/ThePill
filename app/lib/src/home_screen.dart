@@ -15,7 +15,7 @@ class HomeScreen extends StatefulWidget {
   });
 
   final SharedConfigStore store;
-  final PillClient Function(String baseUrl) clientFactory;
+  final PillClient Function(String baseUrl, String token) clientFactory;
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -23,6 +23,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final _url = TextEditingController();
+  final _token = TextEditingController();
   final _try = TextEditingController();
   bool _coachEnabled = true;
   bool _checking = false;
@@ -35,6 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
       if (!mounted) return;
       setState(() {
         _url.text = c.serverUrl;
+        _token.text = c.token;
         _coachEnabled = c.coachEnabled;
       });
     });
@@ -43,6 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void dispose() {
     _url.dispose();
+    _token.dispose();
     _try.dispose();
     super.dispose();
   }
@@ -53,7 +56,11 @@ class _HomeScreenState extends State<HomeScreen> {
     final l = AppLocalizations.of(context);
     final messenger = ScaffoldMessenger.of(context);
     await widget.store.save(
-      PillConfig(serverUrl: _url.text, coachEnabled: _coachEnabled),
+      PillConfig(
+        serverUrl: _url.text,
+        coachEnabled: _coachEnabled,
+        token: _token.text,
+      ),
     );
     messenger.showSnackBar(SnackBar(content: Text(l.saved)));
   }
@@ -63,7 +70,9 @@ class _HomeScreenState extends State<HomeScreen> {
       _checking = true;
       _result = null;
     });
-    final r = await widget.clientFactory(_url.text.trim()).coach(_try.text);
+    final r = await widget
+        .clientFactory(_url.text.trim(), _token.text.trim())
+        .coach(_try.text);
     if (!mounted) return;
     setState(() {
       _checking = false;
@@ -114,6 +123,17 @@ class _HomeScreenState extends State<HomeScreen> {
               decoration: InputDecoration(
                 labelText: l.serverUrlLabel,
                 hintText: l.serverUrlHint,
+              ),
+            ),
+            TextField(
+              key: const Key('token'),
+              controller: _token,
+              obscureText: true,
+              autocorrect: false,
+              enableSuggestions: false,
+              decoration: InputDecoration(
+                labelText: l.tokenLabel,
+                hintText: l.tokenHint,
               ),
             ),
             SwitchListTile(

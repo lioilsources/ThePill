@@ -1,0 +1,10 @@
+tunnel: <TUNNEL-ID>
+credentials-file: /etc/cloudflared/<TUNNEL-ID>.json
+
+ingress:
+  - hostname: <PILL_HOST>
+    service: http://caddy:80
+    originRequest:
+      connectTimeout: 30s
+      httpHostHeader: <PILL_HOST>
+  - service: http_status:404

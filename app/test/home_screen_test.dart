@@ -22,7 +22,11 @@ void main() {
         .setMockMethodCallHandler(ch, (call) async {
           switch (call.method) {
             case 'load':
-              return {'server_url': 'http://pill.test', 'coach_enabled': true};
+              return {
+                'server_url': 'http://pill.test',
+                'coach_enabled': true,
+                'token': 'tok',
+              };
             case 'save':
               saved.add(call.arguments);
               return null;
@@ -35,7 +39,8 @@ void main() {
     await t.pumpWidget(
       PillApp(
         store: SharedConfigStore(channel: ch),
-        clientFactory: (url) => PillClient(url, client: mock),
+        clientFactory: (url, token) =>
+            PillClient(url, token: token, client: mock),
         locale: const Locale('cs'),
       ),
     );
@@ -55,6 +60,7 @@ void main() {
     expect(saved.single, {
       'server_url': 'http://pill.test',
       'coach_enabled': true,
+      'token': 'tok',
     });
   });
 

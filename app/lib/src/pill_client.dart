@@ -41,11 +41,13 @@ class Coaching {
 class PillClient {
   PillClient(
     this.baseUrl, {
+    this.token = '',
     http.Client? client,
     this.timeout = const Duration(seconds: 8),
   }) : _http = client ?? http.Client();
 
   final String baseUrl;
+  final String token;
   final Duration timeout;
   final http.Client _http;
 
@@ -62,7 +64,10 @@ class PillClient {
       final res = await _http
           .post(
             _uri('/coach'),
-            headers: {'Content-Type': 'application/json; charset=utf-8'},
+            headers: {
+              'Content-Type': 'application/json; charset=utf-8',
+              if (token.isNotEmpty) 'Authorization': 'Bearer $token',
+            },
             body: jsonEncode({'text': text, 'lang': lang}),
           )
           .timeout(timeout);

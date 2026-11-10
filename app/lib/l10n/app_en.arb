@@ -11,6 +11,8 @@
   "privacyBody": "The keyboard sends the message you are typing to the Pill server only to check its tone. The server does not store or log it. Passwords and card numbers are never sent — the coach stays silent in those fields.",
   "serverTitle": "Server",
   "serverUrlLabel": "pill-core address",
+  "tokenLabel": "Access token",
+  "tokenHint": "only for a public server, otherwise leave empty",
   "serverUrlHint": "http://<computer IP>:8090",
   "coachEnabled": "Coach on",
   "save": "Save",

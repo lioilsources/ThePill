@@ -45,6 +45,11 @@ Release build povoluje jen HTTPS (`network_security_config`), HTTP na `pill-core
 v LAN umí jen debug. Testeři z Firebase / TestFlightu potřebují `pill-core` za HTTPS
 (Caddy). Než bude, testuj debug APK přes `adb install`.
 
+Připraveno v `deploy/joda/` (vzor AlienMatch): `pill-core` + Caddy + Cloudflare tunnel,
+`PILL_TOKEN` povinný (appka ho posílá jako `Authorization: Bearer`, pole „Přístupový
+token“). Binárka: `make -C core joda-bin`. Hostname a tunnel rozhodne Olin; nasazení
+až na jeho pokyn. LLM zůstává na SPARKu — když broker model nemá nahraný, kouč mlčí.
+
 ## Privacy / support
 GitHub Pages z `main /docs`: `https://lioilsources.github.io/ThePill/privacy.html`,
 `…/support.html` (do ASC a Google Play). Marketing URL `https://olin.now/thepill`.

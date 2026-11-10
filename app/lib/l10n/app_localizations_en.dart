@@ -46,6 +46,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get serverUrlLabel => 'pill-core address';
 
   @override
+  String get tokenLabel => 'Access token';
+
+  @override
+  String get tokenHint => 'only for a public server, otherwise leave empty';
+
+  @override
   String get serverUrlHint => 'http://<computer IP>:8090';
 
   @override

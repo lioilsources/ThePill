@@ -14,6 +14,7 @@ type Config struct {
 	LLMAPIKey  string
 	LLMModel   string
 	Timeout    time.Duration
+	Token      string
 }
 
 func FromEnv() Config {
@@ -23,6 +24,7 @@ func FromEnv() Config {
 		LLMAPIKey:  os.Getenv("PILL_LLM_API_KEY"),
 		LLMModel:   env("PILL_LLM_MODEL", "openclaw-default"),
 		Timeout:    20 * time.Second,
+		Token:      os.Getenv("PILL_TOKEN"),
 	}
 	if d, err := time.ParseDuration(os.Getenv("PILL_LLM_TIMEOUT")); err == nil && d > 0 {
 		c.Timeout = d

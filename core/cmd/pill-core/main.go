@@ -5,6 +5,7 @@
 //	PILL_LLM_API_KEY   klíč pro LiteLLM gateway
 //	PILL_LLM_MODEL     LiteLLM route (default openclaw-default)
 //	PILL_LLM_TIMEOUT   (default 20s)
+//	PILL_TOKEN         when set, clients must send "Authorization: Bearer <token>"
 package main
 
 import (
@@ -19,13 +20,13 @@ import (
 
 func main() {
 	cfg := config.FromEnv()
-	srv := &api.Server{Model: cfg.Model(), Timeout: cfg.Timeout}
+	srv := &api.Server{Model: cfg.Model(), Timeout: cfg.Timeout, Token: cfg.Token}
 	hs := &http.Server{
 		Addr:              cfg.Addr,
 		Handler:           srv.Handler(),
 		ReadHeaderTimeout: 5 * time.Second,
 	}
-	slog.Info("pill-core start", "addr", cfg.Addr, "model", cfg.LLMModel, "llm", cfg.LLMBaseURL)
+	slog.Info("pill-core start", "addr", cfg.Addr, "model", cfg.LLMModel, "llm", cfg.LLMBaseURL, "auth", cfg.Token != "")
 	if err := hs.ListenAndServe(); err != nil {
 		slog.Error("pill-core", "err", err)
 		os.Exit(1)

@@ -100,3 +100,31 @@ func TestTextNeverLogged(t *testing.T) {
 		t.Fatalf("text zprávy unikl do logu:\n%s", buf.String())
 	}
 }
+
+func TestTokenRequired(t *testing.T) {
+	h := (&Server{Model: offline, Token: "s3cret"}).Handler()
+	do := func(path, auth string) int {
+		req := httptest.NewRequest(http.MethodPost, path, strings.NewReader(`{"text":"ahoj"}`))
+		if path == "/healthz" {
+			req = httptest.NewRequest(http.MethodGet, path, nil)
+		}
+		if auth != "" {
+			req.Header.Set("Authorization", auth)
+		}
+		rec := httptest.NewRecorder()
+		h.ServeHTTP(rec, req)
+		return rec.Code
+	}
+	if c := do("/coach", ""); c != http.StatusUnauthorized {
+		t.Errorf("no token: %d", c)
+	}
+	if c := do("/coach", "Bearer wrong"); c != http.StatusUnauthorized {
+		t.Errorf("wrong token: %d", c)
+	}
+	if c := do("/coach", "Bearer s3cret"); c != http.StatusOK {
+		t.Errorf("good token: %d", c)
+	}
+	if c := do("/healthz", ""); c != http.StatusOK {
+		t.Errorf("healthz must stay public: %d", c)
+	}
+}

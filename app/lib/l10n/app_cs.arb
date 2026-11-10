@@ -11,6 +11,8 @@
   "privacyBody": "Klávesnice pošle text rozepsané zprávy na server Pilulky jen ke kontrole tónu. Server text neukládá ani neloguje. Hesla a čísla karet klávesnice nikdy neposílá — v těch polích kouč mlčí.",
   "serverTitle": "Server",
   "serverUrlLabel": "Adresa pill-core",
+  "tokenLabel": "Přístupový token",
+  "tokenHint": "jen pro veřejný server, jinak nech prázdné",
   "serverUrlHint": "http://<IP počítače>:8090",
   "coachEnabled": "Kouč zapnutý",
   "save": "Uložit",

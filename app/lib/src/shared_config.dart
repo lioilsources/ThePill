@@ -4,10 +4,17 @@ import 'package:flutter/services.dart';
 /// Android: SharedPreferences „pill_shared“; iOS: App Group UserDefaults.
 /// Obě strany čtou stejné klíče — viz PillKeyboardService.kt a SharedConfig.swift.
 class PillConfig {
-  const PillConfig({required this.serverUrl, required this.coachEnabled});
+  const PillConfig({
+    required this.serverUrl,
+    required this.coachEnabled,
+    this.token = '',
+  });
 
   final String serverUrl;
   final bool coachEnabled;
+
+  /// Bearer token for a public pill-core (empty on a LAN server).
+  final String token;
 
   static const empty = PillConfig(serverUrl: '', coachEnabled: true);
 }
@@ -20,6 +27,7 @@ class SharedConfigStore {
 
   static const keyServerUrl = 'server_url';
   static const keyCoachEnabled = 'coach_enabled';
+  static const keyToken = 'token';
 
   Future<PillConfig> load() async {
     try {
@@ -27,6 +35,7 @@ class SharedConfigStore {
       return PillConfig(
         serverUrl: (m[keyServerUrl] as String?) ?? '',
         coachEnabled: (m[keyCoachEnabled] as bool?) ?? true,
+        token: (m[keyToken] as String?) ?? '',
       );
     } on MissingPluginException {
       return PillConfig.empty;
@@ -37,6 +46,7 @@ class SharedConfigStore {
     await _ch.invokeMethod<void>('save', {
       keyServerUrl: c.serverUrl.trim(),
       keyCoachEnabled: c.coachEnabled,
+      keyToken: c.token.trim(),
     });
   }
 

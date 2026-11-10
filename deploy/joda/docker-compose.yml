@@ -1,0 +1,53 @@
+# ThePill on JODA: pill-core behind Caddy, public only through the project's
+# Cloudflare tunnel (TLS at Cloudflare). Nothing is published on the host.
+# The LLM stays on SPARK (LiteLLM); when the model is not loaded, pill-core
+# fails open (`degraded: true`) and the keyboard stays silent.
+#
+#   make -C core joda-bin && rsync deploy/joda/ joda:~/deploy/ThePill/ && docker compose up -d --build
+name: thepill
+
+x-logging: &logging
+  driver: json-file
+  options: { max-size: 10m, max-file: "3" }
+
+services:
+  api:
+    build:
+      context: .
+    image: thepill/pill-core:latest
+    container_name: thepill-api
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      PILL_ADDR: ":8090"
+      PILL_TOKEN: ${PILL_TOKEN:?set in .env}
+    networks: [thepill]
+    mem_limit: 64m
+    logging: *logging
+
+  caddy:
+    image: caddy:2-alpine
+    container_name: thepill-caddy
+    restart: unless-stopped
+    depends_on: [api]
+    environment:
+      PILL_HOST: ${PILL_HOST:?set in .env}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+    networks: [thepill]
+    mem_limit: 48m
+    logging: *logging
+
+  cloudflared:
+    image: cloudflare/cloudflared:2026.7.3
+    container_name: thepill-cloudflared
+    restart: unless-stopped
+    command: tunnel --no-autoupdate --config /etc/cloudflared/config.yml run
+    volumes:
+      - ./cloudflared:/etc/cloudflared:ro
+    networks: [thepill]
+    mem_limit: 96m
+    logging: *logging
+
+networks:
+  thepill:

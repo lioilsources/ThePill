@@ -9,6 +9,7 @@ package api
 
 import (
 	"context"
+	"crypto/subtle"
 	"encoding/json"
 	"errors"
 	"expvar"
@@ -34,6 +35,9 @@ var (
 type Server struct {
 	Model   model.Model
 	Timeout time.Duration
+	// Token, when set, is required as "Authorization: Bearer <token>" on every
+	// endpoint except /healthz (public deployment behind Caddy).
+	Token string
 }
 
 func (s *Server) Handler() http.Handler {
@@ -43,7 +47,21 @@ func (s *Server) Handler() http.Handler {
 	mux.HandleFunc("POST /coach", s.coach)
 	mux.HandleFunc("GET /healthz", func(w http.ResponseWriter, _ *http.Request) { w.Write([]byte("ok\n")) })
 	mux.Handle("GET /debug/vars", expvar.Handler())
-	return logRequests(mux)
+	return logRequests(s.auth(mux))
+}
+
+func (s *Server) auth(next http.Handler) http.Handler {
+	if s.Token == "" {
+		return next
+	}
+	want := []byte("Bearer " + s.Token)
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if r.URL.Path != "/healthz" && subtle.ConstantTimeCompare([]byte(r.Header.Get("Authorization")), want) != 1 {
+			http.Error(w, "unauthorized", http.StatusUnauthorized)
+			return
+		}
+		next.ServeHTTP(w, r)
+	})
 }
 
 type textReq struct {

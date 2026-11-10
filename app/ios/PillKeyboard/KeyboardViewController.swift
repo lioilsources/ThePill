@@ -84,7 +84,7 @@ final class KeyboardViewController: UIInputViewController {
                            fullAccess: hasFullAccess) else { return }
     gate.markChecked(text)
     let gen = generation
-    CoachClient.coach(serverURL: url, text: text) { [weak self] c in
+    CoachClient.coach(serverURL: url, text: text, token: SharedConfig.token) { [weak self] c in
       DispatchQueue.main.async {
         // Uživatel mezitím psal dál → odpověď patří k jinému textu.
         guard let self, gen == self.generation, let c, c.isHostile else { return }

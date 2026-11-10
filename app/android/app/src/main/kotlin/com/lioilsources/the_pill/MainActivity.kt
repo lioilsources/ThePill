@@ -18,12 +18,14 @@ class MainActivity : FlutterActivity() {
                         mapOf(
                             SharedConfig.KEY_SERVER_URL to prefs.getString(SharedConfig.KEY_SERVER_URL, ""),
                             SharedConfig.KEY_COACH_ENABLED to prefs.getBoolean(SharedConfig.KEY_COACH_ENABLED, true),
+                            SharedConfig.KEY_TOKEN to prefs.getString(SharedConfig.KEY_TOKEN, ""),
                         )
                     )
                     "save" -> {
                         prefs.edit()
                             .putString(SharedConfig.KEY_SERVER_URL, call.argument<String>(SharedConfig.KEY_SERVER_URL) ?: "")
                             .putBoolean(SharedConfig.KEY_COACH_ENABLED, call.argument<Boolean>(SharedConfig.KEY_COACH_ENABLED) ?: true)
+                            .putString(SharedConfig.KEY_TOKEN, call.argument<String>(SharedConfig.KEY_TOKEN) ?: "")
                             .apply()
                         result.success(null)
                     }
