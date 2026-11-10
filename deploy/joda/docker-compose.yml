@@ -3,7 +3,7 @@
 # The LLM stays on SPARK (LiteLLM); when the model is not loaded, pill-core
 # fails open (`degraded: true`) and the keyboard stays silent.
 #
-#   make -C core joda-bin && rsync deploy/joda/ joda:~/deploy/ThePill/ && docker compose up -d --build
+#   deploy/joda/deploy.sh        # build on the Mac, rsync, compose up, healthcheck
 name: thepill
 
 x-logging: &logging
@@ -21,6 +21,11 @@ services:
     environment:
       PILL_ADDR: ":8090"
       PILL_TOKEN: ${PILL_TOKEN:?set in .env}
+    healthcheck:
+      test: ["CMD", "/usr/local/bin/pill-core", "healthcheck"]
+      interval: 30s
+      timeout: 5s
+      start_period: 5s
     networks: [thepill]
     mem_limit: 64m
     logging: *logging
