@@ -23,7 +23,7 @@ func FromEnv() Config {
 		LLMBaseURL: env("PILL_LLM_BASE_URL", "http://localhost:8080/v1"),
 		LLMAPIKey:  os.Getenv("PILL_LLM_API_KEY"),
 		LLMModel:   env("PILL_LLM_MODEL", "openclaw-default"),
-		Timeout:    20 * time.Second,
+		Timeout:    10 * time.Second,
 		Token:      os.Getenv("PILL_TOKEN"),
 	}
 	if d, err := time.ParseDuration(os.Getenv("PILL_LLM_TIMEOUT")); err == nil && d > 0 {

@@ -45,10 +45,16 @@ Release build povoluje jen HTTPS (`network_security_config`), HTTP na `pill-core
 v LAN umí jen debug. Testeři z Firebase / TestFlightu potřebují `pill-core` za HTTPS
 (Caddy). Než bude, testuj debug APK přes `adb install`.
 
-Připraveno v `deploy/joda/` (vzor AlienMatch): `pill-core` + Caddy + Cloudflare tunnel,
-`PILL_TOKEN` povinný (appka ho posílá jako `Authorization: Bearer`, pole „Přístupový
-token“). Binárka: `make -C core joda-bin`. Hostname a tunnel rozhodne Olin; nasazení
-až na jeho pokyn. LLM zůstává na SPARKu — když broker model nemá nahraný, kouč mlčí.
+`deploy/joda/deploy.sh` (vzor AlienMatch): `pill-core` + Caddy + vlastní Cloudflare tunnel
+`thepill` na `pill.ol1n.com` (`PILL_HOST` přepíše). Idempotentní: `.env` s náhodným
+`PILL_TOKEN`, tunnel i DNS vzniknou na JODĚ při prvním běhu a nikdy ji neopustí.
+Appka posílá token jako `Authorization: Bearer` (pole „Přístupový token“).
+Veřejný krok — spouštět jen na Olinovo „nasaď“.
+
+LLM: stálá route na SPARKu není (broker přepíná profily). Klíč LiteLLM per projekt vydá
+Olin a zapíše se do `.env` na JODĚ; bez něj `pill-core` degraduje (kouč mlčí). Timeout
+10 s. Dostupnost ověřuj skutečným chat voláním, `/v1/models` lže. GPU okno pro
+testovací den: `sparkctl lease` z vlastní session.
 
 ## Privacy / support
 GitHub Pages z `main /docs`: `https://lioilsources.github.io/ThePill/privacy.html`,
