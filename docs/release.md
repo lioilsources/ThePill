@@ -51,9 +51,9 @@ v LAN umí jen debug. Testeři z Firebase / TestFlightu potřebují `pill-core` 
 Appka posílá token jako `Authorization: Bearer` (pole „Přístupový token“).
 Veřejný krok — spouštět jen na Olinovo „nasaď“.
 
-LLM: stálá route na SPARKu není (broker přepíná profily). Klíč LiteLLM per projekt vydá
-Olin a zapíše se do `.env` na JODĚ; bez něj `pill-core` degraduje (kouč mlčí). Timeout
-10 s. Dostupnost ověřuj skutečným chat voláním, `/v1/models` lže. GPU okno pro
+LLM: stálá route na SPARKu není (broker přepíná profily); když model neběží, `pill-core`
+degraduje (kouč mlčí). LiteLLM v LAN nemá klíče; adresu gateway vezme `deploy.sh` při
+prvním nasazení z lokálního `.env` (`PILL_LLM_BASE_URL`). Timeout 10 s. Dostupnost ověřuj skutečným chat voláním, `/v1/models` lže. GPU okno pro
 testovací den: `sparkctl lease` z vlastní session.
 
 ## Privacy / support
