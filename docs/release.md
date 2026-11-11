@@ -60,6 +60,17 @@ testovací den: `sparkctl lease` z vlastní session.
 GitHub Pages z `main /docs`: `https://lioilsources.github.io/ThePill/privacy.html`,
 `…/support.html` (do ASC a Google Play). Marketing URL `https://olin.now/thepill`.
 
+## Jazyky a store listingy
+- Appka je ve 45 jazycích (`app/lib/l10n/*.arb`, šablona `app_cs.arb`); klávesnice má řetězce
+  v `android/.../values-b+<jazyk>/strings.xml` a `ios/PillKeyboard/<jazyk>.lproj/Localizable.strings`.
+  Rozložení kláves zůstává české QWERTZ (psaní v jiných jazycích zatím nepodporuje).
+- Privacy / support / úvodní stránka: česky v `docs/*.html`, ostatní jazyky v `docs/<jazyk>/`,
+  generuje je `python3 tools/web-i18n/gen.py` z `tools/web-i18n/strings/<jazyk>.json`.
+  Do ASC / Google Play dávej URL s kódem jazyka, např. `…/ThePill/de/privacy.html`.
+- Store texty: `fastlane/metadata/{ios,android}/<locale>/` (Apple name/subtitle 30 znaků,
+  keywords 100 BAJTŮ, Google title 30, short 80). Nahrání je ruční — fastlane ani workflow
+  je zatím nenahrává. Screenshoty nejsou.
+
 ## Po vydání
 - olin.now: `apps/thepill/meta.md` → doplnit `testflight:` / `artifacts:` a screenshoty,
   `make fetch build`, PR, po merge `make deploy` (skill `release-flutter`).

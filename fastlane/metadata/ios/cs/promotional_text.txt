@@ -1,0 +1,1 @@
+Klávesnice, která hlídá tón zpráv partnerovi a rodině. Když rozepsaná věta zní jako útok, nabídne dvě klidnější verze. Vybereš ťuknutím, sama nic neposílá.

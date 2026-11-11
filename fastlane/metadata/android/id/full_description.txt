@@ -1,0 +1,14 @@
+The Pill adalah papan ketik dengan pelatih untuk pesan ke pasangan dan keluarga.
+
+Anda lelah, anak menangis, dan pesan terkirim lebih tajam dari maksud Anda. Sebelum mengirim, The Pill memeriksa nadanya. Jika draf terdengar seperti serangan, ia menampilkan catatan singkat yang ramah dan dua versi lebih tenang yang mempertahankan semua fakta: waktu, nama, jumlah, dan permintaan Anda.
+
+• Hanya bersuara saat pesan terdengar seperti serangan: sindiran, tuduhan, teriakan, ultimatum.
+• Dua alternatif dalam sudut pandang orang pertama, siap diketuk. Tidak ada yang diganti sebelum Anda mengetuk.
+• Tidak pernah mengirim atau menulis ulang apa pun sendiri.
+• Diam di kolom kata sandi dan kolom sensitif lainnya.
+• Tanpa akun, tanpa iklan, tanpa analitik, tanpa pelacakan.
+• Model bahasa berjalan di perangkat keras milik operator, bukan layanan AI pihak ketiga. Server tidak menyimpan atau mencatat pesan Anda.
+
+Cara mengaktifkan: Pengaturan → Papan Ketik → tambahkan The Pill, dan di iPhone izinkan Akses Penuh agar papan ketik dapat menjangkau server. Lalu masukkan alamat server di aplikasi.
+
+Aplikasi dan kebijakan privasi tersedia dalam 45 bahasa. Saran ditulis dalam bahasa pesan Anda dan lebih dulu disetel untuk bahasa Ceko.

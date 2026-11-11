@@ -1,0 +1,14 @@
+A The Pill edzővel ellátott billentyűzet a párodnak és a családodnak írt üzenetekhez.
+
+Fáradt vagy, a gyerek sír, és az üzenet élesebbre sikerül, mint akartad. Küldés előtt a The Pill ellenőrzi a hangnemet. Ha a piszkozat támadásnak hangzik, rövid, kedves megjegyzést és két nyugodtabb változatot mutat, amelyek megtartanak minden tényt: időpontokat, neveket, összegeket és a kérésedet.
+
+• Csak akkor szól, ha az üzenet támadásnak hangzik: szarkazmus, szemrehányás, kiabálás, ultimátum.
+• Két változat egyes szám első személyben, koppintásra készen. Semmi sem cserélődik ki, amíg nem koppintasz.
+• Magától soha nem küld és nem ír át semmit.
+• Jelszómezőkben és más érzékeny mezőkben hallgat.
+• Nincs fiók, nincs hirdetés, nincs elemzés, nincs követés.
+• A nyelvi modell az üzemeltető saját hardverén fut, nem külső MI-szolgáltatásnál. A szerver nem tárolja és nem naplózza az üzeneteidet.
+
+Bekapcsolás: Beállítások → Billentyűzet → add hozzá a The Pillt, iPhone-on engedélyezd a teljes hozzáférést, hogy a billentyűzet elérje a szervert. Ezután add meg a szerver címét az alkalmazásban.
+
+Az alkalmazás és az adatvédelmi tájékoztató 45 nyelven érhető el. A javaslatok az üzeneted nyelvén készülnek, elsősorban csehre hangolva.

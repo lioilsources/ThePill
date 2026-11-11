@@ -1,0 +1,14 @@
+O The Pill é um teclado com treinador para mensagens ao parceiro e à família.
+
+Está cansado, a criança chora e a mensagem sai mais dura do que queria. Antes de enviar, o The Pill verifica o tom. Se o rascunho soa a ataque, mostra uma nota curta e simpática e duas versões mais calmas que mantêm todos os factos: horas, nomes, valores e o seu pedido.
+
+• Só intervém quando a mensagem soa a ataque: sarcasmo, acusações, gritos, ultimatos.
+• Duas alternativas na primeira pessoa, prontas a tocar. Nada é substituído se não tocar.
+• Nunca envia nem reescreve nada por iniciativa própria.
+• Fica em silêncio em campos de palavra-passe e outros campos sensíveis.
+• Sem conta, sem anúncios, sem análise, sem rastreio.
+• O modelo de linguagem corre no equipamento do próprio operador, não num serviço de IA de terceiros. O servidor não guarda nem regista as suas mensagens.
+
+Para ativar: Definições → Teclado → adicione o The Pill e, no iPhone, permita o acesso total para o teclado chegar ao servidor. Depois indique o endereço do servidor na aplicação.
+
+A aplicação e a política de privacidade existem em 45 idiomas. As sugestões são escritas no idioma da sua mensagem e foram afinadas primeiro para o checo.

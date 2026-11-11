@@ -1,0 +1,14 @@
+The Pill ialah papan kekunci dengan jurulatih untuk mesej kepada pasangan dan keluarga.
+
+Anda penat, anak menangis, dan mesej keluar lebih tajam daripada yang dimaksudkan. Sebelum menghantar, The Pill menyemak nada. Jika draf kedengaran seperti serangan, ia menunjukkan nota ringkas yang mesra dan dua versi lebih tenang yang mengekalkan semua fakta: masa, nama, jumlah dan permintaan anda.
+
+• Hanya bersuara apabila mesej kedengaran seperti serangan: sindiran, tuduhan, jeritan, ultimatum.
+• Dua alternatif dalam orang pertama, sedia untuk diketik. Tiada apa diganti sehingga anda mengetiknya.
+• Tidak pernah menghantar atau menulis semula apa-apa sendiri.
+• Diam dalam medan kata laluan dan medan sensitif lain.
+• Tiada akaun, tiada iklan, tiada analitik, tiada penjejakan.
+• Model bahasa berjalan pada perkakasan pengendali sendiri, bukan perkhidmatan AI pihak ketiga. Pelayan tidak menyimpan atau merekodkan mesej anda.
+
+Cara mengaktifkan: Tetapan → Papan Kekunci → tambah The Pill, dan pada iPhone benarkan Akses Penuh supaya papan kekunci dapat mencapai pelayan. Kemudian masukkan alamat pelayan dalam apl.
+
+Apl dan dasar privasi tersedia dalam 45 bahasa. Cadangan ditulis dalam bahasa mesej anda dan ditala dahulu untuk bahasa Czech.

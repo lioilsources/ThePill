@@ -1,0 +1,1 @@
+Tipkovnica koja pazi na ton poruka partneru i obitelji. Kad nacrt zvuči kao napad, predlaže dvije mirnije verzije. Ti dodirneš; sama ne šalje ništa.

@@ -1,0 +1,14 @@
+The Pill is een toetsenbord met coach voor berichten aan je partner en gezin.
+
+Je bent moe, het kind huilt en het bericht komt scherper over dan je wilde. Voordat je verstuurt, controleert The Pill de toon. Klinkt het concept als een aanval, dan toont het een korte, vriendelijke opmerking en twee rustiger versies die alle feiten behouden: tijden, namen, bedragen en je verzoek.
+
+• Meldt zich alleen als een bericht als een aanval klinkt: sarcasme, verwijten, schreeuwen, ultimatums.
+• Twee alternatieven in de ik-vorm, klaar om aan te tikken. Er wordt niets vervangen zolang je niet tikt.
+• Verstuurt of herschrijft nooit iets uit zichzelf.
+• Zwijgt in wachtwoordvelden en andere gevoelige velden.
+• Geen account, geen advertenties, geen analyse, geen tracking.
+• Het taalmodel draait op de eigen hardware van de beheerder, niet bij een externe AI-dienst. De server slaat je berichten niet op en logt ze niet.
+
+Inschakelen: Instellingen → Toetsenbord → voeg The Pill toe en sta op de iPhone volledige toegang toe, zodat het toetsenbord de server bereikt. Vul daarna het serveradres in de app in.
+
+De app en het privacybeleid zijn er in 45 talen. Suggesties worden geschreven in de taal van je bericht en zijn eerst afgestemd op het Tsjechisch.

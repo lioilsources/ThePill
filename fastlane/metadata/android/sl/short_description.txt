@@ -1,0 +1,1 @@
+Tipkovnica, ki pred pošiljanjem predlaga mirnejšo formulacijo ostrega sporočila.

@@ -1,0 +1,14 @@
+The Pill är ett tangentbord med coach för meddelanden till partner och familj.
+
+Du är trött, barnet gråter och meddelandet blir skarpare än du tänkt. Innan du skickar kontrollerar The Pill tonen. Låter utkastet som ett angrepp visar det en kort, vänlig kommentar och två lugnare versioner som behåller alla fakta: tider, namn, belopp och din begäran.
+
+• Hör av sig bara när ett meddelande låter som ett angrepp: sarkasm, förebråelser, skrik, ultimatum.
+• Två alternativ i första person, redo att trycka på. Inget ersätts förrän du trycker.
+• Skickar eller skriver aldrig om något på egen hand.
+• Tiger i lösenordsfält och andra känsliga fält.
+• Inget konto, inga annonser, ingen analys, ingen spårning.
+• Språkmodellen körs på operatörens egen hårdvara, inte hos en tredjeparts AI-tjänst. Servern lagrar eller loggar inte dina meddelanden.
+
+Så slår du på det: Inställningar → Tangentbord → lägg till The Pill, och tillåt full åtkomst på iPhone så att tangentbordet når servern. Ange sedan serveradressen i appen.
+
+Appen och integritetspolicyn finns på 45 språk. Förslagen skrivs på språket i ditt meddelande och är först och främst anpassade för tjeckiska.

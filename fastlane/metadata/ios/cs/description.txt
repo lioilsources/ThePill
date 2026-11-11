@@ -1,0 +1,14 @@
+The Pill je klávesnice s koučem pro zprávy partnerovi a rodině.
+
+Jsi unavená nebo unavený, dítě pláče a zpráva vyjde ostřejší, než jsi chtěl. Než ji odešleš, The Pill zkontroluje tón. Pokud rozepsaná věta zní jako útok, ukáže krátkou laskavou poznámku a dvě klidnější verze, které zachovají všechna fakta: časy, jména, částky i tvoji žádost.
+
+• Ozve se jen tehdy, když zpráva zní jako útok: sarkasmus, výčitka, křik, ultimátum.
+• Dvě alternativy v první osobě, připravené k ťuknutí. Nic se nenahradí, dokud neklepneš.
+• Sama nikdy nic neodešle ani nepřepíše.
+• V polích pro hesla a jiných citlivých polích mlčí.
+• Žádný účet, žádné reklamy, žádná analytika, žádné sledování.
+• Jazykový model běží na vlastním hardwaru provozovatele, ne u cizí AI služby. Server zprávy neukládá ani nelogguje.
+
+Zapnutí: Nastavení → Klávesnice → přidej The Pill, na iPhonu povol plný přístup, aby klávesnice mohla volat server. Pak v aplikaci zadej adresu serveru.
+
+Aplikace i zásady soukromí mluví 45 jazyky. Návrhy kouče se píšou v jazyce tvé zprávy; nejlépe jsou vyladěné pro češtinu.

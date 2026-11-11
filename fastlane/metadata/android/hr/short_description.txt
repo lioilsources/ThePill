@@ -1,0 +1,1 @@
+Tipkovnica koja prije slanja predlaže mirniji izričaj ljute poruke.

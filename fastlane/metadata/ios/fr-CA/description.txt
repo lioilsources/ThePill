@@ -1,0 +1,14 @@
+The Pill est un clavier avec coach pour les messages à votre conjoint et à votre famille.
+
+Vous êtes fatigué, l'enfant pleure et le message part plus sec que prévu. Avant l'envoi, The Pill vérifie le ton. Si le brouillon sonne comme une attaque, il affiche une courte remarque bienveillante et deux versions plus calmes qui gardent tous les faits : horaires, noms, montants et votre demande.
+
+• Ne se manifeste que lorsqu'un message sonne comme une attaque : sarcasme, reproches, cris, ultimatums.
+• Deux alternatives à la première personne, à toucher. Rien n'est remplacé sans votre geste.
+• N'envoie ni ne réécrit jamais rien de lui-même.
+• Reste muet dans les champs de mot de passe et autres champs sensibles.
+• Pas de compte, pas de publicité, pas d'analyse, pas de suivi.
+• Le modèle de langage tourne sur le matériel de l'exploitant, pas sur un service d'IA tiers. Le serveur ne stocke ni ne journalise vos messages.
+
+Pour l'activer : Réglages → Clavier → ajoutez The Pill et, sur iPhone, autorisez l'accès complet pour que le clavier joigne le serveur. Saisissez ensuite l'adresse du serveur dans l'app.
+
+L'app et la politique de confidentialité existent en 45 langues. Les suggestions sont rédigées dans la langue de votre message ; elles sont d'abord réglées pour le tchèque.
