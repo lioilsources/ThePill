@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">The Pill</string>
+    <string name="keyboard_label">The Pill</string>
+    <string name="coach_warning">这听起来带攻击性——换种方式显示？</string>
+    <string name="coach_show">显示</string>
+    <string name="coach_dismiss">保持原样</string>
+    <string name="key_space">空格</string>
+</resources>

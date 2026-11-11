@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">The Pill</string>
+    <string name="keyboard_label">The Pill</string>
+    <string name="coach_warning">Ovo zvuči kao napad – prikazati drukčije?</string>
+    <string name="coach_show">Prikaži</string>
+    <string name="coach_dismiss">Zadrži</string>
+    <string name="key_space">razmak</string>
+</resources>

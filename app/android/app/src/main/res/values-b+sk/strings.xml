@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">The Pill</string>
+    <string name="keyboard_label">The Pill</string>
+    <string name="coach_warning">Znie to ako útok – ukázať inak?</string>
+    <string name="coach_show">Ukázať</string>
+    <string name="coach_dismiss">Nechať</string>
+    <string name="key_space">medzerník</string>
+</resources>

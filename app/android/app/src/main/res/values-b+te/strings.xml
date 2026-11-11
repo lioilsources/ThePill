@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">The Pill</string>
+    <string name="keyboard_label">The Pill</string>
+    <string name="coach_warning">ఇది దాడిలా అనిపిస్తోంది — మరో విధంగా చూపించనా?</string>
+    <string name="coach_show">చూపించు</string>
+    <string name="coach_dismiss">అలాగే ఉంచు</string>
+    <string name="key_space">స్పేస్</string>
+</resources>

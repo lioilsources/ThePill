@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">The Pill</string>
+    <string name="keyboard_label">The Pill</string>
+    <string name="coach_warning">공격적으로 들려요. 다른 표현을 볼까요?</string>
+    <string name="coach_show">보기</string>
+    <string name="coach_dismiss">그대로</string>
+    <string name="key_space">스페이스</string>
+</resources>
