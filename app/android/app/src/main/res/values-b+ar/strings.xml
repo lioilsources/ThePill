@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">The Pill</string>
+    <string name="keyboard_label">The Pill</string>
+    <string name="coach_warning">هذا يبدو كهجوم. هل نعرض صيغة أخرى؟</string>
+    <string name="coach_show">اعرض</string>
+    <string name="coach_dismiss">أبقِ</string>
+    <string name="key_space">مسافة</string>
+</resources>

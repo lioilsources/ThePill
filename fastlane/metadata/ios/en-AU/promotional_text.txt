@@ -1,0 +1,1 @@
+A keyboard coach for messages to your partner and family. When a draft sounds like an attack, it suggests two calmer versions. You tap to use one; it sends nothing.

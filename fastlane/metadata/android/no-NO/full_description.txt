@@ -1,0 +1,14 @@
+The Pill er et tastatur med coach for meldinger til partner og familie.
+
+Du er sliten, barnet gråter, og meldingen blir skarpere enn du ville. Før du sender, sjekker The Pill tonen. Høres utkastet ut som et angrep, viser det en kort, vennlig merknad og to roligere versjoner som beholder alle fakta: tidspunkter, navn, beløp og forespørselen din.
+
+• Sier fra bare når en melding høres ut som et angrep: sarkasme, bebreidelser, roping, ultimatum.
+• To alternativer i førsteperson, klare til å trykkes. Ingenting byttes ut før du trykker.
+• Sender eller skriver aldri om noe av seg selv.
+• Tier i passordfelt og andre sensitive felt.
+• Ingen konto, ingen reklame, ingen analyse, ingen sporing.
+• Språkmodellen kjører på operatørens egen maskinvare, ikke hos en tredjeparts AI-tjeneste. Serveren lagrer eller logger ikke meldingene dine.
+
+Slik slår du det på: Innstillinger → Tastatur → legg til The Pill, og på iPhone tillater du full tilgang slik at tastaturet når serveren. Skriv deretter inn serveradressen i appen.
+
+Appen og personvernerklæringen finnes på 45 språk. Forslagene skrives på språket i meldingen din og er først og fremst tilpasset tsjekkisk.

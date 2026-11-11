@@ -1,0 +1,14 @@
+The Pill, eşinize ve ailenize yazdığınız mesajlar için koçlu bir klavyedir.
+
+Yorgunsunuz, çocuk ağlıyor ve mesaj istediğinizden sert çıkıyor. Göndermeden önce The Pill tonu kontrol eder. Taslak saldırgan geliyorsa kısa, nazik bir not ve tüm gerçekleri koruyan iki daha sakin sürüm gösterir: saatler, adlar, tutarlar ve isteğiniz.
+
+• Yalnızca mesaj saldırgan geldiğinde konuşur: alay, suçlama, bağırma, ültimatom.
+• Birinci tekil kişiyle iki alternatif, dokunmaya hazır. Siz dokunmadıkça hiçbir şey değişmez.
+• Kendi kendine asla bir şey göndermez ya da yeniden yazmaz.
+• Parola ve diğer hassas alanlarda susar.
+• Hesap yok, reklam yok, analiz yok, izleme yok.
+• Dil modeli, üçüncü taraf bir yapay zekâ hizmetinde değil, işletmecinin kendi donanımında çalışır. Sunucu mesajlarınızı saklamaz ve kaydetmez.
+
+Açmak için: Ayarlar → Klavye → The Pill'i ekleyin; iPhone'da klavyenin sunucuya ulaşması için tam erişime izin verin. Sonra uygulamada sunucu adresini girin.
+
+Uygulama ve gizlilik politikası 45 dilde sunulur. Öneriler mesajınızın dilinde yazılır ve önce Çekçe için ayarlanmıştır.

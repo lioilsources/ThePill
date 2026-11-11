@@ -1,0 +1,14 @@
+The Pill este o tastatură cu antrenor pentru mesajele către partener și familie.
+
+Ești obosit, copilul plânge, iar mesajul iese mai tăios decât voiai. Înainte să trimiți, The Pill verifică tonul. Dacă ciorna sună ca un atac, arată o notă scurtă și blândă și două variante mai calme care păstrează toate faptele: ore, nume, sume și cererea ta.
+
+• Intervine doar când un mesaj sună ca un atac: sarcasm, reproșuri, țipete, ultimatumuri.
+• Două alternative la persoana întâi, gata de atins. Nimic nu se înlocuiește până nu atingi.
+• Nu trimite și nu rescrie niciodată nimic de capul ei.
+• Tace în câmpurile de parolă și în alte câmpuri sensibile.
+• Fără cont, fără reclame, fără analiză, fără urmărire.
+• Modelul de limbaj rulează pe hardware-ul operatorului, nu într-un serviciu AI terț. Serverul nu stochează și nu înregistrează mesajele tale.
+
+Cum o activezi: Setări → Tastatură → adaugă The Pill, iar pe iPhone permite accesul complet ca tastatura să ajungă la server. Apoi introdu adresa serverului în aplicație.
+
+Aplicația și politica de confidențialitate există în 45 de limbi. Sugestiile sunt scrise în limba mesajului tău și sunt reglate mai întâi pentru cehă.

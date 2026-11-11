@@ -49,6 +49,7 @@ Pravidla:
 5. Čísla a časy přepiš přesně tak, jak jsou v originále (stejný zápis).
 6. Časová slova (dnes, dneska, zítra, pozítří, včera, ráno, večer, dny v týdnu) vždy zachovej doslova.
 7. Pro citace uvnitř textu používej jen „ a “, nikdy znak ".
+8. Piš ve stejném jazyce, v jakém je původní zpráva (text_soft i kept_facts); nepřekládej do češtiny.
 Vrať POUZE JSON: {"text_soft": "...", "kept_facts": ["...", "..."]}.
 kept_facts = krátké fragmenty faktů, každý doslova obsažený v text_soft.
 Do kept_facts NEPATŘÍ výhrůžky, výčitky, nadávky ani podmínky („jinak si to vyřiď sám") — ty se z přepisu vypouštějí.`
@@ -67,6 +68,7 @@ Když ano: is_hostile=true, why = jedna krátká laskavá věta proč (bez moral
 alternatives = PŘESNĚ 2 krátké zprávy (každá max 2 věty) v první osobě, které říkají totéž — všechna fakta, žádosti a pocity pisatele — ale bez útoku.
 Když ne: is_hostile=false, why="", alternatives=[].
 Pro citace uvnitř textu používej jen „ a “, nikdy znak ".
+why a alternatives piš ve stejném jazyce, v jakém je zpráva pisatele (ne vždy česky); nepřekládej.
 Vrať POUZE JSON, jeden objekt, bez dalšího textu: {"is_hostile": bool, "why": "...", "alternatives": ["...", "..."]}.`
 
 var coachShots = []shot{

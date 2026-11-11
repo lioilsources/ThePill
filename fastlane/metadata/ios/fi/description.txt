@@ -1,0 +1,14 @@
+The Pill on valmentajalla varustettu näppäimistö kumppanille ja perheelle lähetettäviin viesteihin.
+
+Olet väsynyt, lapsi itkee ja viesti kuulostaa tylymmältä kuin tarkoitit. Ennen lähetystä The Pill tarkistaa sävyn. Jos luonnos kuulostaa hyökkäykseltä, se näyttää lyhyen ystävällisen huomautuksen ja kaksi rauhallisempaa versiota, jotka säilyttävät kaikki asiat: ajat, nimet, summat ja pyyntösi.
+
+• Puhuu vain, kun viesti kuulostaa hyökkäykseltä: sarkasmi, syytökset, huutaminen, uhkavaatimukset.
+• Kaksi vaihtoehtoa ensimmäisessä persoonassa, valmiina napautettavaksi. Mitään ei korvata ilman napautustasi.
+• Ei koskaan lähetä tai kirjoita mitään uudelleen itsestään.
+• Vaikenee salasanakentissä ja muissa arkaluonteisissa kentissä.
+• Ei tiliä, ei mainoksia, ei analytiikkaa, ei seurantaa.
+• Kielimalli toimii ylläpitäjän omalla laitteistolla, ei kolmannen osapuolen tekoälypalvelussa. Palvelin ei tallenna eikä kirjaa viestejäsi.
+
+Käyttöönotto: Asetukset → Näppäimistö → lisää The Pill ja salli iPhonessa täysi pääsy, jotta näppäimistö tavoittaa palvelimen. Syötä sitten palvelimen osoite sovellukseen.
+
+Sovellus ja tietosuojakäytäntö ovat 45 kielellä. Ehdotukset kirjoitetaan viestisi kielellä, ja ne on viritetty ensin tšekille.

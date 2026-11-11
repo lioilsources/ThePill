@@ -1,0 +1,1 @@
+Billentyűzet, amely figyeli a párodnak és a családodnak írt üzenetek hangnemét. Ha a piszkozat támadásnak hangzik, két nyugodtabb változatot javasol. Te koppintasz.

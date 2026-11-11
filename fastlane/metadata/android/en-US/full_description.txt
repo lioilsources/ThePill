@@ -1,0 +1,14 @@
+The Pill is a keyboard coach for messages to your partner and family.
+
+You are tired, a child is crying, and a message comes out sharper than you meant. Before you hit send, The Pill checks the tone. If the draft sounds like an attack, it shows a short, kind note and two calmer versions that keep every fact: times, names, amounts and your request.
+
+• Speaks up only when a message sounds like an attack: sarcasm, blame, shouting, ultimatums.
+• Two alternatives in the first person, ready to tap. Nothing is replaced unless you tap it.
+• Never sends or rewrites anything on its own.
+• Stays silent in password and other sensitive fields.
+• No account, no ads, no analytics, no tracking.
+• The language model runs on the operator's own hardware, not a third-party AI service. The server does not store or log your messages.
+
+To turn it on: Settings → Keyboard → add The Pill, and on iPhone allow Full Access so the keyboard can reach the server. Then enter the server address in the app.
+
+The app and the privacy policy come in 45 languages. Suggestions are written in the language of your message; they are tuned for Czech first.

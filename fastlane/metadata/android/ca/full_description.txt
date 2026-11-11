@@ -1,0 +1,14 @@
+The Pill és un teclat amb coach per als missatges a la parella i a la família.
+
+Estàs cansat o cansada, el nen plora i el missatge surt més dur del que volies. Abans d'enviar-lo, The Pill revisa el to. Si l'esborrany sona a atac, mostra una nota breu i amable i dues versions més calmades que conserven tots els fets: hores, noms, imports i la teva petició.
+
+• Només parla quan un missatge sona a atac: sarcasme, retret, crits, ultimàtums.
+• Dues alternatives en primera persona, a un toc. No se substitueix res si no el toques.
+• Mai no envia ni reescriu res per si sol.
+• Es manté callat als camps de contrasenya i altres camps sensibles.
+• Sense compte, sense anuncis, sense analítica, sense seguiment.
+• El model de llenguatge funciona al maquinari de l'operador, no en un servei d'IA de tercers. El servidor no desa ni registra els missatges.
+
+Per activar-lo: Configuració → Teclat → afegeix The Pill i, a l'iPhone, permet l'accés complet perquè el teclat pugui arribar al servidor. Després indica l'adreça del servidor a l'aplicació.
+
+L'aplicació i la política de privadesa estan en 45 llengües. Els suggeriments s'escriuen en la llengua del teu missatge i estan afinats primer per al txec.

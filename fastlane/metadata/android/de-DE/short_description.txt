@@ -1,0 +1,1 @@
+Eine Tastatur, die vor dem Senden eine ruhigere Formulierung vorschlägt.

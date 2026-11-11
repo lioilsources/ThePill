@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">The Pill</string>
+    <string name="keyboard_label">The Pill</string>
+    <string name="coach_warning">இது தாக்குதல் போல ஒலிக்கிறது — வேறு விதமாகக் காட்டவா?</string>
+    <string name="coach_show">காட்டு</string>
+    <string name="coach_dismiss">அப்படியே விடு</string>
+    <string name="key_space">இடைவெளி</string>
+</resources>

@@ -1,0 +1,14 @@
+The Pill to klawiatura z trenerem do wiadomości dla partnera i rodziny.
+
+Jesteś zmęczony, dziecko płacze, a wiadomość wychodzi ostrzejsza, niż chciałeś. Zanim ją wyślesz, The Pill sprawdza ton. Jeśli szkic brzmi jak atak, pokazuje krótką, życzliwą uwagę i dwie spokojniejsze wersje, które zachowują wszystkie fakty: godziny, imiona, kwoty i twoją prośbę.
+
+• Odzywa się tylko wtedy, gdy wiadomość brzmi jak atak: sarkazm, wyrzuty, krzyk, ultimatum.
+• Dwie alternatywy w pierwszej osobie, gotowe do stuknięcia. Nic się nie zmienia, dopóki nie stukniesz.
+• Nigdy sama niczego nie wysyła ani nie przepisuje.
+• Milczy w polach haseł i innych wrażliwych polach.
+• Bez konta, bez reklam, bez analityki, bez śledzenia.
+• Model językowy działa na własnym sprzęcie operatora, nie w zewnętrznej usłudze AI. Serwer nie zapisuje ani nie loguje twoich wiadomości.
+
+Jak włączyć: Ustawienia → Klawiatura → dodaj The Pill, a na iPhonie zezwól na pełny dostęp, aby klawiatura miała łączność z serwerem. Potem wpisz adres serwera w aplikacji.
+
+Aplikacja i polityka prywatności są w 45 językach. Podpowiedzi powstają w języku twojej wiadomości i są dostrojone najpierw do czeskiego.

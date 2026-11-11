@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">The Pill</string>
+    <string name="keyboard_label">The Pill</string>
+    <string name="coach_warning">এটা আক্রমণের মতো শোনাচ্ছে — অন্যভাবে দেখাব?</string>
+    <string name="coach_show">দেখাও</string>
+    <string name="coach_dismiss">রাখো</string>
+    <string name="key_space">স্পেস</string>
+</resources>

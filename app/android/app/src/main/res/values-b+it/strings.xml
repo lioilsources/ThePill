@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">The Pill</string>
+    <string name="keyboard_label">The Pill</string>
+    <string name="coach_warning">Suona come un attacco: mostrare in altro modo?</string>
+    <string name="coach_show">Mostra</string>
+    <string name="coach_dismiss">Lascia</string>
+    <string name="key_space">spazio</string>
+</resources>

@@ -103,7 +103,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Text(l.setupStepSwitch),
             const SizedBox(height: 8),
             Align(
-              alignment: Alignment.centerLeft,
+              alignment: AlignmentDirectional.centerStart,
               child: OutlinedButton(
                 onPressed: widget.store.openKeyboardSettings,
                 child: Text(l.openSettings),
@@ -143,7 +143,7 @@ class _HomeScreenState extends State<HomeScreen> {
               onChanged: (v) => setState(() => _coachEnabled = v),
             ),
             Align(
-              alignment: Alignment.centerLeft,
+              alignment: AlignmentDirectional.centerStart,
               child: FilledButton(
                 key: const Key('saveButton'),
                 onPressed: _save,
@@ -161,7 +161,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             const SizedBox(height: 8),
             Align(
-              alignment: Alignment.centerLeft,
+              alignment: AlignmentDirectional.centerStart,
               child: FilledButton.tonal(
                 key: const Key('tryButton'),
                 onPressed: _checking ? null : _check,

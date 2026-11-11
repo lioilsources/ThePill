@@ -1,0 +1,14 @@
+The Pill je tipkovnica s trenerom za poruke partneru i obitelji.
+
+Umoran si, dijete plače, a poruka ispadne oštrija nego što si htio. Prije slanja The Pill provjeri ton. Ako nacrt zvuči kao napad, pokaže kratku ljubaznu napomenu i dvije mirnije verzije koje zadržavaju sve činjenice: vremena, imena, iznose i tvoj zahtjev.
+
+• Oglasi se samo kad poruka zvuči kao napad: sarkazam, prigovori, vika, ultimatumi.
+• Dvije alternative u prvom licu, spremne za dodir. Ništa se ne zamjenjuje dok ne dodirneš.
+• Nikad sama ništa ne šalje niti prepisuje.
+• Šuti u poljima za lozinke i drugim osjetljivim poljima.
+• Bez računa, bez oglasa, bez analitike, bez praćenja.
+• Jezični model radi na vlastitom hardveru operatora, a ne kod tuđe AI usluge. Poslužitelj ne sprema niti bilježi tvoje poruke.
+
+Uključivanje: Postavke → Tipkovnica → dodaj The Pill, a na iPhoneu dopusti potpuni pristup kako bi tipkovnica došla do poslužitelja. Zatim u aplikaciji upiši adresu poslužitelja.
+
+Aplikacija i pravila privatnosti dostupni su na 45 jezika. Prijedlozi se pišu na jeziku tvoje poruke, a prvo su podešeni za češki.

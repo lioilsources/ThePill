@@ -1,0 +1,1 @@
+Een toetsenbord dat de toon van berichten aan partner en gezin bewaakt. Klinkt een concept als een aanval, dan stelt het twee rustiger versies voor. Jij tikt.

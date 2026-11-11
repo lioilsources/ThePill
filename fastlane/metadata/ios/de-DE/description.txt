@@ -1,0 +1,14 @@
+The Pill ist eine Tastatur mit Coach für Nachrichten an Partner und Familie.
+
+Du bist müde, das Kind weint, und die Nachricht wird schärfer, als du wolltest. Bevor du sendest, prüft The Pill den Ton. Klingt der Entwurf wie ein Angriff, zeigt sie einen kurzen, freundlichen Hinweis und zwei ruhigere Fassungen, die alle Fakten behalten: Zeiten, Namen, Beträge und deine Bitte.
+
+• Meldet sich nur, wenn eine Nachricht wie ein Angriff klingt: Sarkasmus, Vorwürfe, Geschrei, Ultimaten.
+• Zwei Alternativen in der Ich-Form, per Tipp übernehmbar. Nichts wird ersetzt, solange du nicht tippst.
+• Sendet oder überschreibt von sich aus nie etwas.
+• Schweigt in Passwortfeldern und anderen sensiblen Feldern.
+• Kein Konto, keine Werbung, keine Analyse, kein Tracking.
+• Das Sprachmodell läuft auf der eigenen Hardware des Betreibers, nicht bei einem fremden KI-Dienst. Der Server speichert und protokolliert deine Nachrichten nicht.
+
+So schaltest du sie ein: Einstellungen → Tastatur → The Pill hinzufügen, auf dem iPhone Vollzugriff erlauben, damit die Tastatur den Server erreicht. Dann die Serveradresse in der App eintragen.
+
+App und Datenschutzerklärung gibt es in 45 Sprachen. Die Vorschläge entstehen in der Sprache deiner Nachricht; abgestimmt ist sie zuerst auf Tschechisch.

@@ -1,0 +1,14 @@
+The Pill là bàn phím có huấn luyện viên cho tin nhắn gửi bạn đời và gia đình.
+
+Bạn mệt, con đang khóc, và tin nhắn bật ra gay gắt hơn ý muốn. Trước khi gửi, The Pill kiểm tra giọng điệu. Nếu bản nháp nghe như công kích, nó hiện một ghi chú ngắn, tử tế cùng hai cách nói êm hơn giữ nguyên mọi sự việc: giờ giấc, tên, số tiền và lời đề nghị của bạn.
+
+• Chỉ lên tiếng khi tin nhắn nghe như công kích: mỉa mai, trách móc, la hét, tối hậu thư.
+• Hai lựa chọn ở ngôi thứ nhất, sẵn sàng để chạm. Không gì bị thay thế nếu bạn không chạm.
+• Không bao giờ tự gửi hay tự viết lại bất cứ điều gì.
+• Im lặng ở ô mật khẩu và các ô nhạy cảm khác.
+• Không tài khoản, không quảng cáo, không phân tích, không theo dõi.
+• Mô hình ngôn ngữ chạy trên phần cứng của chính nhà vận hành, không phải dịch vụ AI của bên thứ ba. Máy chủ không lưu hay ghi nhật ký tin nhắn của bạn.
+
+Cách bật: Cài đặt → Bàn phím → thêm The Pill, và trên iPhone hãy cho phép truy cập đầy đủ để bàn phím kết nối được máy chủ. Sau đó nhập địa chỉ máy chủ trong ứng dụng.
+
+Ứng dụng và chính sách quyền riêng tư có 45 ngôn ngữ. Gợi ý được viết bằng ngôn ngữ tin nhắn của bạn và được tinh chỉnh trước cho tiếng Séc.
